@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21298940}
   - 61: {fileID: 6119392}
   - 114: {fileID: 11484650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HumanLayer.m_Bits
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
