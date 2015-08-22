@@ -19,7 +19,7 @@ public class Statue : MonoBehaviour {
       // check distance
       if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
         // activate the statue
-        Activate();
+        StartCoroutine(Activate());
       }
     }
   }
@@ -27,7 +27,7 @@ public class Statue : MonoBehaviour {
   /// <summary>
   ///   Activates the statue, moving to the next level or displaying progress.
   /// </summary>
-  private void Activate() {
+  private IEnumerator Activate() {
     // activate
     _active = true;
 
@@ -40,6 +40,12 @@ public class Statue : MonoBehaviour {
       _dialogManager.Say("Current goal:\n<color=#006c4c>" + goal.Text + "</color>",
                          transform.position + new Vector3(0, 40f),
                          4f);
+
+      // wait
+      yield return new WaitForSeconds(4f);
+
+      // deactivate
+      _active = false;
     }
     else
       StartCoroutine(NextLevel());

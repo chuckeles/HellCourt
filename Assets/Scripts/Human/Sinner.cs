@@ -14,7 +14,7 @@ public class Sinner : MonoBehaviour {
     var levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
     // get a random number of random sins
-    var numberOfSins = Random.Range(levelManager.MinSins, levelManager.MaxSins);
+    var numberOfSins = Random.Range((int) levelManager.MinSins, (int) levelManager.MaxSins);
 
     for (var i = 0; i < numberOfSins; ++i) {
       var sin = database.GetRandomSin();
