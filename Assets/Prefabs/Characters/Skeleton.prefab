@@ -12,10 +12,10 @@ GameObject:
   - 58: {fileID: 5820208}
   - 50: {fileID: 5028758}
   - 114: {fileID: 11411118}
-  - 114: {fileID: 11406162}
+  - 114: {fileID: 11484746}
   m_Layer: 9
   m_Name: Skeleton
-  m_TagString: Human
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,21 +61,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 7.80000019}
   serializedVersion: 2
   m_Radius: 7.80000019
---- !u!114 &11406162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390a7b76a92c5d64590b884675ebbba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HumanLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  HurtRadius: 64
 --- !u!114 &11411118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +74,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxWanderDistance: 32
   Speed: 20
+--- !u!114 &11484746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f40a0d0beafab449bb62c33ff1e47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropSentences:
+  - Ou hello there!
+  - Bu bu bu bu!
+  - Don't be scared.
+  - What are you looking at?
+  - Yes, I'm alive.
+  - What?
+  - I'm made out of bones...
+  - Been here for so long...
+  - Ah! We have a company!
+  - Welcome.
+  - Don't waste my time.
+  - I'm in no hurry.
+  - I see.
+  - Can I play with them?
+  - What is this?
+  - Really?
+  - I am really old.
+  - This will be fun
+  - Let's get to work.
+  HumanLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  HurtRadius: 96
 --- !u!212 &21283974
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -140,7 +160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Human
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: HumanInfoPrefab
@@ -169,7 +189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: HurtRadius
-      value: 64
+      value: 96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
