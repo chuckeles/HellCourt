@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour {
   /// <summary>
   ///   The strength of the jumping.
   /// </summary>
-  public float JumpStrength = 10f;
+  public float JumpStrength = 200f;
 
   /// <summary>
   ///   The layer of blocks.
@@ -66,7 +66,7 @@ public class Movement : MonoBehaviour {
   /// <summary>
   ///   Movement speed.
   /// </summary>
-  public float Speed = 10f;
+  public float Speed = 100f;
 
   /// <summary>
   ///   The body component.
