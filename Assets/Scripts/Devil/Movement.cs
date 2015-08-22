@@ -12,10 +12,17 @@ public class Movement : MonoBehaviour {
     _collider = GetComponent<CircleCollider2D>();
   }
 
+  public void Update() {
+    // read jump input
+    if (Input.GetButtonDown("Jump"))
+      _jumping = true;
+  }
+
   public void FixedUpdate() {
     // get input
     var moveInput = Input.GetAxisRaw("Horizontal");
-    var jumpInput = Input.GetButtonDown("Jump");
+    var jumpInput = _jumping;
+    _jumping = false;
 
     // create new velocity
     var newVelocity = _body.velocity;
@@ -77,5 +84,10 @@ public class Movement : MonoBehaviour {
   ///   The collider component.
   /// </summary>
   private CircleCollider2D _collider;
+
+  /// <summary>
+  /// True if we got a jump input.
+  /// </summary>
+  private bool _jumping = false;
 
 }
