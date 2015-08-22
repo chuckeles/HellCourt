@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Solid
-  - 
+  - Character
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 456420615
+    locked: 0
+  - name: Player
+    uniqueID: 3411602893
     locked: 0
