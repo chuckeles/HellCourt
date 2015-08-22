@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Characters
-    uniqueID: 456420615
+  - name: Blocks
+    uniqueID: 3972134287
     locked: 0
   - name: Items
     uniqueID: 1112692393
     locked: 0
-  - name: Blocks
-    uniqueID: 3972134287
+  - name: Characters
+    uniqueID: 456420615
     locked: 0
