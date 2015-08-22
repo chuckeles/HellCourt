@@ -25,11 +25,6 @@ public class Statue : MonoBehaviour {
   }
 
   /// <summary>
-  /// True if the statue is active and showing info.
-  /// </summary>
-  private bool _active = false;
-
-  /// <summary>
   ///   Activates the statue, moving to the next level or displaying progress.
   /// </summary>
   private void Activate() {
@@ -71,6 +66,11 @@ public class Statue : MonoBehaviour {
   public string[] WinSentences = {
     "Well done.", "The Master will be pleased.", "You have done well.", "Good."
   };
+
+  /// <summary>
+  ///   True if the statue is active and showing info.
+  /// </summary>
+  private bool _active;
 
   /// <summary>
   ///   The devil.
