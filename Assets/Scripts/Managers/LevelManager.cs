@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 ///   Manages level specific data, such as difficulty and goals.
@@ -6,11 +7,27 @@
 public class LevelManager : MonoBehaviour {
 
   /// <summary>
+  ///   Information about a level goal.
+  /// </summary>
+  [Serializable]
+  public struct Goal {
+
+    /// <summary>
+    ///   Display text.
+    /// </summary>
+    public string Text;
+
+  }
+
+  /// <summary>
+  ///   Level goals
+  /// </summary>
+  public Goal[] Goals = {};
+
+  /// <summary>
   ///   Maximum number of spawned humans.
   /// </summary>
   public uint MaxHumans = 4;
-
-  // TODO: Add level goals
 
   /// <summary>
   ///   Maximum number of sins per human.
