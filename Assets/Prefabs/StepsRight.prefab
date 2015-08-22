@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 423628}
   - 212: {fileID: 21211524}
   - 60: {fileID: 6011566}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: StepsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117880}

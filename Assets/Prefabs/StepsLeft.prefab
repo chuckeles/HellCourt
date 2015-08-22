@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 423628}
   - 212: {fileID: 21211524}
   - 60: {fileID: 6011566}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: StepsLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +83,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a407739713eb65b4181d92010a37555b,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117880}

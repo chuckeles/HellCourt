@@ -3,12 +3,13 @@
 /// <summary>
 ///   Handles the movement of the devil. Uses input from the player.
 /// </summary>
-[RequireComponent(typeof (Rigidbody2D))]
+[RequireComponent(typeof (Rigidbody2D)), RequireComponent(typeof (CircleCollider2D))]
 public class Movement : MonoBehaviour {
 
   public void Awake() {
     // get components
     _body = GetComponent<Rigidbody2D>();
+    _collider = GetComponent<CircleCollider2D>();
   }
 
   public void FixedUpdate() {
@@ -18,15 +19,17 @@ public class Movement : MonoBehaviour {
 
     // create new velocity
     var newVelocity = _body.velocity;
+    var origin = (Vector2) transform.position +
+                 new Vector2(_collider.offset.x, _collider.offset.y);
 
     // if we are moving horizontally
     if (Mathf.Abs(moveInput) > 0) {
-      var side = Mathf.Sign(moveInput);
-
       // test horizontal collision
-      var origin = (Vector2) transform.position + new Vector2(side * 8, 8);
-      var direction = side > 0 ? Vector2.right : Vector2.left;
-      var horizontalHit = Physics2D.Raycast(origin, direction, Speed * Time.fixedDeltaTime, SolidLayerMask);
+      var horizontalHit =
+        Physics2D.OverlapCircle(
+          origin + new Vector2(moveInput * (_collider.radius / 2 + Speed * Time.fixedDeltaTime), _collider.radius / 2),
+          _collider.radius / 2,
+          SolidLayerMask);
 
       if (!horizontalHit) {
         // set horizontal movement
@@ -39,7 +42,7 @@ public class Movement : MonoBehaviour {
     }
 
     // test if on the ground
-    var verticalHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, SolidLayerMask);
+    var verticalHit = Physics2D.OverlapCircle(origin + new Vector2(0, -1f), _collider.radius, SolidLayerMask);
 
     if (verticalHit && jumpInput) {
       // jump
@@ -69,5 +72,10 @@ public class Movement : MonoBehaviour {
   ///   The body component.
   /// </summary>
   private Rigidbody2D _body;
+
+  /// <summary>
+  ///   The collider component.
+  /// </summary>
+  private CircleCollider2D _collider;
 
 }
