@@ -10,9 +10,11 @@ public class Sinner : MonoBehaviour {
   public void Start() {
     // get a sin database
     var database = GameObject.Find("SinDatabase").GetComponent<SinDatabase>();
+    // get level manager
+    var levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
     // get a random number of random sins
-    var numberOfSins = Random.Range(1, 6);
+    var numberOfSins = Random.Range(levelManager.MinSins, levelManager.MaxSins);
 
     for (var i = 0; i < numberOfSins; ++i) {
       var sin = database.GetRandomSin();

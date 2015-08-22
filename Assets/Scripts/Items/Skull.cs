@@ -7,6 +7,9 @@ using UnityEngine;
 public class Skull : MonoBehaviour {
 
   public void Start() {
+    // get manager
+    _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
     // start hurting
     StartCoroutine(Hurt());
   }
@@ -24,7 +27,7 @@ public class Skull : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += Time.deltaTime / 5f;
+        sinner.MentalPain += Time.deltaTime / 5f * _levelManager.PainMultiplier;
       }
     }
 
@@ -44,5 +47,10 @@ public class Skull : MonoBehaviour {
   ///   Hurt circle radius.
   /// </summary>
   public float HurtRadius = 32f;
+
+  /// <summary>
+  ///   The level manager.
+  /// </summary>
+  private LevelManager _levelManager;
 
 }

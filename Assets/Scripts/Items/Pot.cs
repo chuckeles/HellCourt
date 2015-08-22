@@ -5,6 +5,11 @@
 /// </summary>
 public class Pot : MonoBehaviour {
 
+  public void Awake() {
+    // get manager
+    _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+  }
+
   public void Update() {
     // get all humans
     var overlaps = Physics2D.OverlapAreaAll((Vector2) transform.position + DamageAreaMin,
@@ -17,7 +22,7 @@ public class Pot : MonoBehaviour {
       // if human
       if (sinner) {
         // apply pain
-        sinner.PhysicalPain += Time.deltaTime;
+        sinner.PhysicalPain += Time.deltaTime * _levelManager.PainMultiplier;
       }
     }
   }
@@ -36,5 +41,10 @@ public class Pot : MonoBehaviour {
   ///   Human's collision layer.
   /// </summary>
   public LayerMask HumanLayer;
+
+  /// <summary>
+  ///   The level manager.
+  /// </summary>
+  private LevelManager _levelManager;
 
 }

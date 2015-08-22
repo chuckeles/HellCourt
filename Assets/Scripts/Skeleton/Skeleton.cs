@@ -7,6 +7,9 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour {
 
   public void Start() {
+    // get manager
+    _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
     // spy on human dropping
     GameObject.FindWithTag("Player").GetComponent<Picking>().OnDropped += HumanDropped;
 
@@ -40,7 +43,7 @@ public class Skeleton : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += Time.deltaTime;
+        sinner.MentalPain += Time.deltaTime * _levelManager.PainMultiplier;
       }
     }
 
@@ -70,5 +73,10 @@ public class Skeleton : MonoBehaviour {
   ///   Hurt circle radius.
   /// </summary>
   public float HurtRadius = 32f;
+
+  /// <summary>
+  ///   The level manager.
+  /// </summary>
+  private LevelManager _levelManager;
 
 }
