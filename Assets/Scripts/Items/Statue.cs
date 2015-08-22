@@ -32,8 +32,14 @@ public class Statue : MonoBehaviour {
     _active = true;
 
     // check goals
-    if (_levelManager.Goals.Length > 0) {
-      // TODO: Check goals, reset _active
+    if (_levelManager.Goals.Count > 0) {
+      // grab the first one
+      var goal = _levelManager.Goals[0];
+
+      // say it
+      _dialogManager.Say("Current goal:\n<color=#006c4c>" + goal.Text + "</color>",
+                         transform.position + new Vector3(0, 40f),
+                         4f);
     }
     else
       StartCoroutine(NextLevel());

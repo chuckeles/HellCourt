@@ -330,6 +330,34 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 462420, guid: 9bfce5c352f21ed4c8089d7de5a42d7f, type: 2}
   m_PrefabInternal: {fileID: 247018643}
+--- !u!1 &362005222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 362005223}
+  m_Layer: 0
+  m_Name: Tutorials
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &362005223
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362005222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.7463722, y: 66.5765915, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1433510257}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &453773637
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +725,103 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 462420, guid: 9bfce5c352f21ed4c8089d7de5a42d7f, type: 2}
   m_PrefabInternal: {fileID: 1344338464}
+--- !u!1001 &1433510256
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 362005223}
+    m_Modifications:
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 48.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -58.5999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_Pivot.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_Pivot.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 103906, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_Name
+      value: GrabTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+      propertyPath: m_Text
+      value: 'Grab a human by interacting with them
+
+        (<color=#006c4c>E</color> or <color=#006c4c>Shift</color>)'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &1433510257 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1433510256}
 --- !u!1 &1614534175
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +856,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 39560783}
     m_Modifications:
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: Goals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 471474, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -770,6 +899,10 @@ Prefab:
     - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
       propertyPath: MinHumans
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: Goals.Array.data[0].Number
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}

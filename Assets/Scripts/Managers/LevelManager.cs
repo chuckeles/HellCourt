@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -13,16 +14,48 @@ public class LevelManager : MonoBehaviour {
   public struct Goal {
 
     /// <summary>
+    ///   Goal types.
+    /// </summary>
+    public enum GoalType {
+
+      ReturnHumans
+
+    }
+
+    /// <summary>
     ///   Display text.
     /// </summary>
-    public string Text;
+    public string Text {
+      get {
+        // build text
+        var text = "";
+
+        switch (Type) {
+          case GoalType.ReturnHumans:
+            text = string.Format("Return {0} {1}", Number, Number > 1 ? "humans" : "human");
+            break;
+        }
+
+        return text;
+      }
+    }
+
+    /// <summary>
+    ///   Depends on the type, i. e. how many humans to return.
+    /// </summary>
+    public int Number;
+
+    /// <summary>
+    ///   This goal's type.
+    /// </summary>
+    public GoalType Type;
 
   }
 
   /// <summary>
   ///   Level goals
   /// </summary>
-  public Goal[] Goals = {};
+  public List<Goal> Goals = new List<Goal>();
 
   /// <summary>
   ///   Maximum number of spawned humans.
