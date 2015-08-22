@@ -5,10 +5,12 @@
 /// </summary>
 public class Picking : MonoBehaviour {
 
-  public void Update() {
-    // update variables
-    JustPlaced = false;
+  /// <summary>
+  ///   Delegate for OnDropped event.
+  /// </summary>
+  public delegate void DroppedDelegate(GameObject human);
 
+  public void Update() {
     // check input
     if (Input.GetButtonDown("Use")) {
       if (_pickedHuman)
@@ -58,9 +60,9 @@ public class Picking : MonoBehaviour {
 
     _pickedHuman.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-    // update public vars
-    JustPlaced = true;
-    LastHumanPlaced = _pickedHuman;
+    // fire event
+    if (OnDropped != null)
+      OnDropped(_pickedHuman);
 
     // reset variable
     _pickedHuman = null;
@@ -96,16 +98,6 @@ public class Picking : MonoBehaviour {
   public Vector2 CarryOffset = new Vector2();
 
   /// <summary>
-  ///   True if a human was just placed.
-  /// </summary>
-  public bool JustPlaced = false;
-
-  /// <summary>
-  ///   Last human placed down.
-  /// </summary>
-  public GameObject LastHumanPlaced;
-
-  /// <summary>
   ///   From how far the devil can pick.
   /// </summary>
   public float PickRange = 32f;
@@ -119,5 +111,10 @@ public class Picking : MonoBehaviour {
   ///   Currently picked human.
   /// </summary>
   private GameObject _pickedHuman;
+
+  /// <summary>
+  ///   Fired when a human is placed.
+  /// </summary>
+  public event DroppedDelegate OnDropped;
 
 }

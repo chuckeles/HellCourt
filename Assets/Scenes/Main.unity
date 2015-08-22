@@ -2926,7 +2926,7 @@ GameObject:
   - 114: {fileID: 1643096619}
   - 114: {fileID: 1643096618}
   m_Layer: 5
-  m_Name: InteractTutorial
+  m_Name: UseTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
