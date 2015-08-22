@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadZone: .100000001
-  Offset: {x: 0, y: 32}
+  Offset: {x: 0, y: 20}
   Speed: 95
   Target: {fileID: 0}
 --- !u!124 &12424748
@@ -129,6 +129,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Offset.y
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
