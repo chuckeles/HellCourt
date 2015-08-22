@@ -13,14 +13,14 @@ public class FollowerCamera : MonoBehaviour {
 
   public void Update() {
     // get target's viewport position
-    var viewPos = _camera.WorldToViewportPoint(Target.transform.position);
+    var viewPos = _camera.WorldToViewportPoint(Target.transform.position + (Vector3) Offset);
     viewPos.x = viewPos.x * 2 - 1;
     viewPos.y = viewPos.y * 2 - 1;
 
     // if out of deadzone
     if (Mathf.Max(Mathf.Abs(viewPos.x), Mathf.Abs(viewPos.y)) > DeadZone) {
       // get direction
-      var direction = Target.transform.position - transform.position;
+      var direction = Target.transform.position + (Vector3) Offset - transform.position;
       direction.z = 0;
 
       // normalize
@@ -35,6 +35,11 @@ public class FollowerCamera : MonoBehaviour {
   ///   Dead zone in viewport coordinates.
   /// </summary>
   public float DeadZone = 0.4f;
+
+  /// <summary>
+  ///   Target point offset.
+  /// </summary>
+  public Vector2 Offset = new Vector2();
 
   /// <summary>
   ///   Translation speed.
