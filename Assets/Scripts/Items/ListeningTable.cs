@@ -129,7 +129,7 @@ public class ListeningTable : MonoBehaviour {
     yield return new WaitForSeconds(1f);
 
     // say a thing
-    _dialogManager.Say("What have you done?", new Vector2(0, 20f), 2f, _devil);
+    _dialogManager.Say("Why are you here?", new Vector2(0, 20f), 2f, _devil);
 
     // wait
     yield return new WaitForSeconds(2.2f);
