@@ -74,14 +74,15 @@ public class SayRandomThings : MonoBehaviour {
   ///   What to say when picked up.
   /// </summary>
   public string[] CarriedOuchSentences = {
-    "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!"
+    "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!", "What am I? A bag?", "Let me go.",
+    "Where are we going?", "Can you talk?", "You are so red...", "This is not fun."
   };
 
   /// <summary>
   ///   What to say as hello.
   /// </summary>
   public string[] HelloSentences = {
-    "Hello.", "Uhm... Hello?", "Hi.", "Heellooo?"
+    "Hello.", "Uhm... Hello?", "Hi.", "Heellooo?", "Hu? Hi? Anyone here?", "Hello there!"
   };
 
   public float MaxWait = 20f;
@@ -91,13 +92,9 @@ public class SayRandomThings : MonoBehaviour {
   /// </summary>
   public string[] MentalOuchSentences = {
     "I'm scared!", "I want to go home.", "What is this scary place?", "I think I'm crazy.", "Ou, my brain...",
-    "I... can't... think...", "Please! Let me be!", "This drives me nuts."
+    "I... can't... think...", "Please! Let me be!", "This drives me nuts.", "I can feel myself fading...",
+    "This place is creepy.", "Help me out, it's scary.", "Fear...", "I fear this place!", "Foianeaxkllawkn..."
   };
-
-  /// <summary>
-  ///   Mental pain waiting to be processed, outside of this component.
-  /// </summary>
-  public float MentalPainToProcess = 0f;
 
   public float MinWait = 5f;
 
@@ -106,20 +103,18 @@ public class SayRandomThings : MonoBehaviour {
   /// </summary>
   public string[] PhysicalOuchSentences = {
     "Ouch!", "That really hurts!", "Oooch!", "Too... much... pain...", "Is that my leg?", "Everything hurts!",
-    "Stop it already!!!", "I'm getting wrecked!", "My last sentence...", "No pain, no gain.", "Pain is temporary!"
+    "Stop it already!!!", "I'm getting wrecked!", "My last sentence...", "No pain, no gain.", "Pain is temporary!",
+    "I can't feel my body.", "It really hurts!", "Is this all there is?", "Can we stop already?", "Uh! Oh! Ouch!"
   };
-
-  /// <summary>
-  ///   Physical pain waiting to be processed, outside of this component.
-  /// </summary>
-  public float PhysicalPainToProcess = 0f;
 
   /// <summary>
   ///   What to say.
   /// </summary>
   public string[] Sentences = {
     "What is this?", "Where am I?", "Huh?", "HELP!", "It's red.", "I'm doomed.",
-    "This is the end.", "Is this really hell?", "Uh...", "It's too hot."
+    "This is the end.", "Is this really hell?", "Uh...", "It's too hot.", "Well...", "Can you see me?",
+    "Where's an exit?", "Just wandering...", "Is that a mask?", "Nothing but red and heat.", "Did I see lava?", "What?",
+    "I'm tired...", "I can barely move...", "Just... stand... here..."
   };
 
   /// <summary>

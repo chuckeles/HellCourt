@@ -41,7 +41,10 @@ public class PotStep : MonoBehaviour {
   /// <summary>
   ///   What the devil says when dropping the human in.
   /// </summary>
-  public string[] DevilSayings = {"MUHAHAHA!!!", "Happy cooking!", "Have fun!"};
+  public string[] DevilSayings = {
+    "MUHAHAHA!!!", "Happy cooking!", "Have fun!", "You are too cold.", "Enjoy!",
+    "Hummmmm...", "Another one!", "Get in there!"
+  };
 
   /// <summary>
   ///   Where to place the human at the start of listening.

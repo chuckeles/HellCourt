@@ -59,6 +59,11 @@ MonoBehaviour:
   - MUHAHAHA!!!
   - Happy cooking!
   - Have fun!
+  - You are too cold.
+  - Enjoy!
+  - Hummmmm...
+  - Another one!
+  - Get in there!
   HumanPosition: {x: 0, y: 32, z: 0}
   Pot: {fileID: 0}
   TriggerDistance: 32

@@ -100,13 +100,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495f190a2176a4d4aab381567841b831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CarriedOuchSentences:
+  - Ouch!
+  - Ou!
+  - That's painful.
+  - It hurts!
+  - Put me down...
+  - Please!
+  - What am I? A bag?
+  - Let me go.
+  - Where are we going?
+  - Can you talk?
+  - You are so red...
+  - This is not fun.
   HelloSentences:
   - Hello.
   - Uhm... Hello?
   - Hi.
   - Heellooo?
+  - Hu? Hi? Anyone here?
+  - Hello there!
   MaxWait: 20
+  MentalOuchSentences:
+  - I'm scared!
+  - I want to go home.
+  - What is this scary place?
+  - I think I'm crazy.
+  - Ou, my brain...
+  - I... can't... think...
+  - Please! Let me be!
+  - This drives me nuts.
+  - I can feel myself fading...
+  - This place is creepy.
+  - Help me out, it's scary.
+  - Fear...
+  - I fear this place!
+  - Foianeaxkllawkn...
   MinWait: 5
+  PhysicalOuchSentences:
+  - Ouch!
+  - That really hurts!
+  - Oooch!
+  - Too... much... pain...
+  - Is that my leg?
+  - Everything hurts!
+  - Stop it already!!!
+  - I'm getting wrecked!
+  - My last sentence...
+  - No pain, no gain.
+  - Pain is temporary!
+  - I can't feel my body.
+  - It really hurts!
+  - Is this all there is?
+  - Can we stop already?
+  - Uh! Oh! Ouch!
   Sentences:
   - What is this?
   - Where am I?
@@ -118,6 +165,17 @@ MonoBehaviour:
   - Is this really hell?
   - Uh...
   - It's too hot.
+  - Well...
+  - Can you see me?
+  - Where's an exit?
+  - Just wandering...
+  - Is that a mask?
+  - Nothing but red and heat.
+  - Did I see lava?
+  - What?
+  - I'm tired...
+  - I can barely move...
+  - Just... stand... here...
 --- !u!114 &11436090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +250,10 @@ Prefab:
       objectReference: {fileID: 190542, guid: 2cbd03a09a064f845913e73882189701, type: 2}
     - target: {fileID: 0}
       propertyPath: Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SinsDiscovered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
