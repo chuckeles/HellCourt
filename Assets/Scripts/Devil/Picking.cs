@@ -58,7 +58,11 @@ public class Picking : MonoBehaviour {
     _pickedHuman.AddComponent<Rigidbody2D>();
     _pickedHuman.AddComponent<Wander>();
 
-    _pickedHuman.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+    // set up rigidbody
+    var body = _pickedHuman.GetComponent<Rigidbody2D>();
+    body.constraints = RigidbodyConstraints2D.FreezeRotation;
+    body.interpolation = RigidbodyInterpolation2D.Interpolate;
+    body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
     // fire event
     if (OnDropped != null)
