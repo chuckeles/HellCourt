@@ -1,6 +1,9 @@
-﻿/// <summary>
+﻿using System;
+
+/// <summary>
 ///   Defines a sin.
 /// </summary>
+[Serializable]
 public struct Sin {
 
   /// <summary>

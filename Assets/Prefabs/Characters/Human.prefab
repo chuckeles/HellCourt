@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5820208}
   - 50: {fileID: 5028758}
   - 114: {fileID: 11411118}
+  - 114: {fileID: 11436090}
   m_Layer: 9
   m_Name: Human
   m_TagString: Untagged
@@ -73,6 +74,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxWanderDistance: 8
   Speed: 50
+--- !u!114 &11436090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a879a9c4b15f754793603b92a8e909d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MentalPain: 0
+  PhysicalPain: 0
+  Sins: []
 --- !u!212 &21283974
 SpriteRenderer:
   m_ObjectHideFlags: 1

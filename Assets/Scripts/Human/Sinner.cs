@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 ///   Manages sins and pain of a human.
@@ -18,6 +19,22 @@ public class Sinner : MonoBehaviour {
   /// <summary>
   ///   Sins this human committed.
   /// </summary>
-  public Sin[] Sins;
+  public List<Sin> Sins;
+
+  public void Start() {
+    // get a sin database
+    var database = GameObject.Find("SinDatabase").GetComponent<SinDatabase>();
+
+    // get a random number of random sins
+    var numberOfSins = Random.Range(1, 4);
+
+    for (var i = 0; i < numberOfSins; ++i) {
+      var sin = database.GetRandomSin();
+      
+      // add if not there already
+      if (!Sins.Exists(s => s.SayLine == sin.SayLine))
+        Sins.Add(sin);
+    }
+  }
 
 }
