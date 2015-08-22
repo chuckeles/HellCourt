@@ -26,7 +26,7 @@ public class Sinner : MonoBehaviour {
     var database = GameObject.Find("SinDatabase").GetComponent<SinDatabase>();
 
     // get a random number of random sins
-    var numberOfSins = Random.Range(1, 4);
+    var numberOfSins = Random.Range(1, 6);
 
     for (var i = 0; i < numberOfSins; ++i) {
       var sin = database.GetRandomSin();

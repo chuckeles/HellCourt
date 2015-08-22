@@ -10,6 +10,9 @@ public class ListeningTable : MonoBehaviour {
     // get devil
     _devil = GameObject.FindWithTag("Player");
 
+    // get manager
+    _dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
+
     // subscribe
     _devil.GetComponent<Picking>().OnDropped += HumanDropped;
   }
@@ -40,17 +43,34 @@ public class ListeningTable : MonoBehaviour {
       if (tutorial)
         Destroy(tutorial);
 
-      // start listening
-      StartCoroutine(GainControl());
+      // start listening procedure
+      StartCoroutine(SayDevil());
     }
+  }
+
+  /// <summary>
+  ///   Human says "And" and continues with next sin.
+  /// </summary>
+  private IEnumerator And(int sin) {
+    // say and
+    _dialogManager.Say("And", new Vector2(0, 20f), 1f, _human);
+
+    // wait
+    yield return new WaitForSeconds(1.2f);
+
+    // next sin
+    StartCoroutine(RespondHuman(sin + 1));
   }
 
   /// <summary>
   ///   Gives control back to the player.
   /// </summary>
   private IEnumerator GainControl() {
+    // you shall pay
+    _dialogManager.Say("You will pay for your sins.", new Vector2(0, 20f), 4f, _devil);
+
     // wait
-    yield return new WaitForSeconds(1f);
+    yield return new WaitForSeconds(.5f);
 
     // re-enable player
     _devil.GetComponent<Movement>().enabled = true;
@@ -58,6 +78,59 @@ public class ListeningTable : MonoBehaviour {
 
     // re-wander human
     _human.GetComponent<Wander>().enabled = true;
+  }
+
+  /// <summary>
+  ///   Human describes their sin.
+  /// </summary>
+  private IEnumerator RespondHuman(int sin) {
+    var sinner = _human.GetComponent<Sinner>();
+
+    // does human have sins
+    if (sinner.Sins.Count <= 0) {
+      // say nothing
+      _dialogManager.Say("Nothing.", new Vector2(0, 20f), 2f, _human);
+
+      // wait
+      yield return new WaitForSeconds(2.2f);
+
+      // finish
+      StartCoroutine(GainControl());
+    }
+    else {
+      // say sin
+      _dialogManager.Say(sinner.Sins[sin].SayLine, new Vector2(0, 24f), 3f, _human);
+
+      // wait
+      yield return new WaitForSeconds(3.2f);
+
+      // check number of sins
+      if (sin + 1 < sinner.Sins.Count) {
+        // more sins
+        StartCoroutine(And(sin));
+      }
+      else {
+        // finish
+        StartCoroutine(GainControl());
+      }
+    }
+  }
+
+  /// <summary>
+  ///   Devil says "What have you done?"
+  /// </summary>
+  private IEnumerator SayDevil() {
+    // wait
+    yield return new WaitForSeconds(1f);
+
+    // say a thing
+    _dialogManager.Say("What have you done?", new Vector2(0, 20f), 2f, _devil);
+
+    // wait
+    yield return new WaitForSeconds(2.2f);
+
+    // let the human respond
+    StartCoroutine(RespondHuman(0));
   }
 
   /// <summary>
@@ -79,6 +152,11 @@ public class ListeningTable : MonoBehaviour {
   ///   The devil.
   /// </summary>
   private GameObject _devil;
+
+  /// <summary>
+  ///   The dialog manager.
+  /// </summary>
+  private DialogManager _dialogManager;
 
   /// <summary>
   ///   Controlled human.

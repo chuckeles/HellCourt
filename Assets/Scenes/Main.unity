@@ -996,7 +996,7 @@ GameObject:
   - 4: {fileID: 674276508}
   - 114: {fileID: 674276507}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: DialogManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

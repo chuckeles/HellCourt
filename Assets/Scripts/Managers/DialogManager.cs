@@ -5,7 +5,7 @@ using UnityEngine.UI;
 /// <summary>
 ///   Handles everything to say.
 /// </summary>
-public class DialogueManager : MonoBehaviour {
+public class DialogManager : MonoBehaviour {
 
   /// <summary>
   ///   Information about something said.
@@ -74,13 +74,6 @@ public class DialogueManager : MonoBehaviour {
         ++i;
       }
     }
-
-    // TODO: Remove
-    // DEBUG
-    if (Input.GetKeyDown(KeyCode.O))
-      Say("Without target", GameObject.FindWithTag("Player").transform.position);
-    if (Input.GetKeyDown(KeyCode.P))
-      Say("With target", new Vector2(0, 32f), 3f, GameObject.FindWithTag("Player"));
   }
 
   /// <summary>
