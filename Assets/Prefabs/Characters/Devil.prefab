@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11412200}
   - 95: {fileID: 9592490}
   - 114: {fileID: 11469062}
+  - 114: {fileID: 11422770}
   m_Layer: 9
   m_Name: Devil
   m_TagString: Player
@@ -91,8 +92,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fa08637578b9a40892b9ff7bcaf970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarryOffset: {x: 6, y: 22}
+  CarryOffset: {x: 13, y: 18}
   PickRange: 32
+--- !u!114 &11422770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0fe3a0829862643ad3d0fa1b336ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SolidLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &11442508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: CarryOffset.y
-      value: 22
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: PickRange
@@ -191,7 +206,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: CarryOffset.x
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Radius

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 423628}
   - 212: {fileID: 21211524}
   - 60: {fileID: 6011566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StepsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
