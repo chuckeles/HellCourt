@@ -85,11 +85,6 @@ public class Picking : MonoBehaviour {
     Destroy(human.GetComponent<Rigidbody2D>());
     human.GetComponent<SayRandomThings>().enabled = false;
 
-    // TODO: Shouldn't be here, but oh well...
-    // check if they are saying a thing
-    while (human.transform.childCount > 0)
-      Destroy(human.transform.GetChild(0));
-
     // parent to us
     _originalHumanParent = human.transform.parent;
     human.transform.parent = transform;
