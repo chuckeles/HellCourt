@@ -57,6 +57,7 @@ public class Picking : MonoBehaviour {
     _pickedHuman.GetComponent<Collider2D>().enabled = true;
     _pickedHuman.AddComponent<Rigidbody2D>();
     _pickedHuman.AddComponent<Wander>();
+    _pickedHuman.GetComponent<SayRandomThings>().enabled = true;
 
     _pickedHuman.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
@@ -82,6 +83,12 @@ public class Picking : MonoBehaviour {
     human.GetComponent<Collider2D>().enabled = false;
     Destroy(human.GetComponent<Wander>());
     Destroy(human.GetComponent<Rigidbody2D>());
+    human.GetComponent<SayRandomThings>().enabled = false;
+
+    // TODO: Shouldn't be here, but oh well...
+    // check if they are saying a thing
+    while (human.transform.childCount > 0)
+      Destroy(human.transform.GetChild(0));
 
     // parent to us
     _originalHumanParent = human.transform.parent;

@@ -34,8 +34,9 @@ public class ListeningTable : MonoBehaviour {
       _human = human;
       _human.transform.position = transform.position + HumanPosition;
 
-      // disable wander
+      // disable wander and saying
       _human.GetComponent<Wander>().enabled = false;
+      _human.GetComponent<SayRandomThings>().enabled = false;
 
       // TODO: Bad design, but it's Ludum Dare, so whatever
       // destroy the tutorial
@@ -76,8 +77,12 @@ public class ListeningTable : MonoBehaviour {
     _devil.GetComponent<Movement>().enabled = true;
     _devil.GetComponent<Picking>().enabled = true;
 
-    // re-wander human
+    // re-enable human
     _human.GetComponent<Wander>().enabled = true;
+    _human.GetComponent<SayRandomThings>().enabled = true;
+
+    // sins have been discovered
+    _human.GetComponent<Sinner>().SinsDiscovered = true;
   }
 
   /// <summary>
