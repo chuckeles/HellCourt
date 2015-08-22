@@ -30,21 +30,34 @@ public class HumanInfo : MonoBehaviour {
   /// <summary>
   ///   Get pain string from pain.
   /// </summary>
-  private string GetPainString(float pain) {
-    if (pain > 10f)
-      return "Craaaaaazy";
-    if (pain > 5)
-      return "Extreme";
-    if (pain > 4)
-      return "Monstrous";
-    if (pain > 2)
-      return "Huge";
-    if (pain > 1)
-      return "Major";
-    if (pain > 0.1)
-      return "Minor";
+  private string GetPainString(float pain, bool required) {
+    // colors
+    var green = "006c4c";
+    var yellow = "f08b18";
+    var red = "f01f18";
 
-    return "No";
+    // returns
+    if (pain > 100f)
+      return "<color=#" + red + ">LEGENDARY!!!</color>";
+    if (pain > 20f)
+      return "<color=#" + red + ">MONSTROUS</color>";
+    if (pain > 10f)
+      return "<color=#" + red + ">CRAZY</color>";
+    if (pain > 5f)
+      return "Gigantic";
+    if (pain > 3f)
+      return "Enormous";
+    if (pain > 2f)
+      return "<color=#" + yellow + ">Huge</color>";
+    if (pain > 1.5f)
+      return "<color=#" + yellow + ">Big</color>";
+    if (pain > 1f)
+      return "<color=#" + green + ">Enough</color>";
+    if (pain > 0.01f)
+      return "Little";
+
+    // no pain
+    return required ? "No" : "<color=#" + green + ">No</color>";
   }
 
   /// <summary>
@@ -63,8 +76,8 @@ public class HumanInfo : MonoBehaviour {
       physicalPain /= requiredPhysicalPain;
 
     // create pain strings
-    var mentalPainString = GetPainString(mentalPain);
-    var physicalPainString = GetPainString(physicalPain);
+    var mentalPainString = GetPainString(mentalPain, requiredMentalPain > 0f);
+    var physicalPainString = GetPainString(physicalPain, requiredPhysicalPain > 0f);
 
     // set text
     _info.GetComponentInChildren<Text>().text = string.Format("{0} sins\n{1} mental pain\n{2} physical pain",
