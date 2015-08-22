@@ -27,7 +27,7 @@ public class Skull : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += Time.deltaTime / 5f * _levelManager.PainMultiplier;
+        sinner.MentalPain += 0.2f * _levelManager.PainMultiplier;
       }
     }
 

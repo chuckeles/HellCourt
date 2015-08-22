@@ -43,7 +43,7 @@ public class Skeleton : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += Time.deltaTime * _levelManager.PainMultiplier;
+        sinner.MentalPain += _levelManager.PainMultiplier;
       }
     }
 
