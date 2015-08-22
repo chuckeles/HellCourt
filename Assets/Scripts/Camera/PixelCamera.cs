@@ -6,7 +6,7 @@
 [RequireComponent(typeof (Camera)), ExecuteInEditMode]
 public class PixelCamera : MonoBehaviour {
 
-  public void Start() {
+  public void Awake() {
     // get the camera
     var camera = GetComponent<Camera>();
 
