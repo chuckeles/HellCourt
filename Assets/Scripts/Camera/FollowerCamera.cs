@@ -23,8 +23,7 @@ public class FollowerCamera : MonoBehaviour {
       var direction = Target.transform.position - transform.position;
       direction.z = 0;
 
-      // get length
-      var maxMove = direction.magnitude;
+      // normalize
       direction.Normalize();
 
       // move
