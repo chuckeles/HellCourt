@@ -15,11 +15,13 @@ public class Wander : MonoBehaviour {
 
   public void FixedUpdate() {
     // check pain
-    if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f || _sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
-      // don't wander in pain
-      enabled = false;
-      return;
-    }
+    if (_sinner)
+      if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f ||
+          _sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
+        // don't wander in pain
+        enabled = false;
+        return;
+      }
 
     // update velocity according to wandering state
     if (_wandering) {
