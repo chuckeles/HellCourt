@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 405206}
   - 212: {fileID: 21211008}
-  - 61: {fileID: 6121926}
+  - 60: {fileID: 6012170}
   m_Layer: 8
   m_Name: Pot
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6121926
-BoxCollider2D:
+--- !u!60 &6012170
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -39,9 +39,21 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 10}
-  serializedVersion: 2
-  m_Size: {x: 32, y: 20}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -16, y: 4}
+      - {x: -13, y: 0}
+      - {x: 13, y: 0}
+      - {x: 16, y: 4}
+      - {x: 16, y: 20.0237846}
+      - {x: 13.3981628, y: 19.987442}
+      - {x: 13.3734283, y: 8.36080551}
+      - {x: 10.8558807, y: 6.2706089}
+      - {x: -11.2188873, y: 6.16932678}
+      - {x: -13.7696686, y: 8.59129333}
+      - {x: -13.7695465, y: 20.0808868}
+      - {x: -16.0617523, y: 20.0855408}
 --- !u!212 &21211008
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,6 +98,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
