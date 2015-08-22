@@ -10,6 +10,9 @@ public class SayRandomThings : MonoBehaviour {
     // get dialog manager
     _manager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
+    // get sinner component
+    _sinner = GetComponent<Sinner>();
+
     // say
     StartCoroutine(Say());
   }
@@ -18,13 +21,39 @@ public class SayRandomThings : MonoBehaviour {
   ///   Says hello or a thing.
   /// </summary>
   private IEnumerator Say() {
+    // get pending pain
+    var pendingMental = _sinner.MentalPain - LastMental;
+    var pendingPhysical = _sinner.PhysicalPain - LastPhysical;
+
+    // reset
+    LastMental = _sinner.MentalPain;
+    LastPhysical = _sinner.PhysicalPain;
+
     // wait
     yield return new WaitForSeconds(Random.Range(MinWait, MaxWait));
 
     if (enabled) {
-      if (transform.localRotation.eulerAngles.z > 0) {
+      if (pendingPhysical > 0f) {
+        // getting physically hurt
+        _manager.Say(PhysicalOuchSentences[Random.Range(0, PhysicalOuchSentences.Length)],
+                     new Vector2(0, 20f),
+                     2f,
+                     gameObject);
+      }
+      else if (pendingMental > 0f) {
+        // getting mentally hurt
+        _manager.Say(MentalOuchSentences[Random.Range(0, MentalOuchSentences.Length)],
+                     new Vector2(0, 20f),
+                     2f,
+                     gameObject);
+      }
+
+      else if (transform.localRotation.eulerAngles.z > 0) {
         // we are carried, say ouch
-        _manager.Say(OuchSentences[Random.Range(0, OuchSentences.Length)], new Vector2(0, 20f), 2f, gameObject);
+        _manager.Say(CarriedOuchSentences[Random.Range(0, CarriedOuchSentences.Length)],
+                     new Vector2(0, 20f),
+                     2f,
+                     gameObject);
       }
       else if (_saidHello) {
         // say random thing
@@ -42,6 +71,13 @@ public class SayRandomThings : MonoBehaviour {
   }
 
   /// <summary>
+  ///   What to say when picked up.
+  /// </summary>
+  public string[] CarriedOuchSentences = {
+    "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!"
+  };
+
+  /// <summary>
   ///   What to say as hello.
   /// </summary>
   public string[] HelloSentences = {
@@ -51,6 +87,14 @@ public class SayRandomThings : MonoBehaviour {
   public float MaxWait = 20f;
 
   /// <summary>
+  ///   What to say when mentally hurt.
+  /// </summary>
+  public string[] MentalOuchSentences = {
+    "I'm scared!", "I want to go home.", "What is this scary place?", "I think I'm crazy.", "Ou, my brain...",
+    "I... can't... think...", "Please! Let me be!", "This drives me nuts."
+  };
+
+  /// <summary>
   ///   Mental pain waiting to be processed, outside of this component.
   /// </summary>
   public float MentalPainToProcess = 0f;
@@ -58,10 +102,11 @@ public class SayRandomThings : MonoBehaviour {
   public float MinWait = 5f;
 
   /// <summary>
-  ///   What to say when picked up.
+  ///   What to say when physically hurt.
   /// </summary>
-  public string[] OuchSentences = {
-    "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!"
+  public string[] PhysicalOuchSentences = {
+    "Ouch!", "That really hurts!", "Oooch!", "Too... much... pain...", "Is that my leg?", "Everything hurts!",
+    "Stop it already!!!", "I'm getting wrecked!", "My last sentence...", "No pain, no gain.", "Pain is temporary!"
   };
 
   /// <summary>
@@ -86,5 +131,13 @@ public class SayRandomThings : MonoBehaviour {
   ///   True if already said hello.
   /// </summary>
   private bool _saidHello;
+
+  /// <summary>
+  ///   The sinner component.
+  /// </summary>
+  private Sinner _sinner;
+
+  private float LastMental;
+  private float LastPhysical;
 
 }
