@@ -1229,7 +1229,7 @@ Prefab:
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
       value: Use <color=#006c4c>W</color>, <color=#006c4c>Up Arrow</color> or <color=#006c4c>Space</color>
-        to jump
+        to jump.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
@@ -1486,7 +1486,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
-      value: Interact with objects using <color=#006c4c>E</color> or <color=#006c4c>Shift</color>
+      value: Interact with objects using <color=#006c4c>E</color> or <color=#006c4c>Shift</color>.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
@@ -1878,7 +1878,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
-      value: Use <color=#006c4c>A+D</color> or <color=#006c4c>Arrows</color> to move
+      value: Use <color=#006c4c>A+D</color> or <color=#006c4c>Arrows</color> to move.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
@@ -3077,7 +3077,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
-      value: Use jump when near a door to enter
+      value: Use jump when near a door to enter.
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_FontData.m_RichText
