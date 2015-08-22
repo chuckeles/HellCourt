@@ -7,17 +7,19 @@
 public class TouchSayer : MonoBehaviour {
 
   public void OnTriggerEnter2D(Collider2D collision) {
-    // get manager
-    var manager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
+    if (collision.tag == Tag) {
+      // get manager
+      var manager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
-    // say a thing
-    manager.Say(Sentences[Random.Range(0, Sentences.Length)],
-                Attach ? new Vector2(0, 20f) : (Vector2) collision.transform.position + new Vector2(0, 20f),
-                SayTime,
-                Attach ? collision.gameObject : null);
+      // say a thing
+      manager.Say(Sentences[Random.Range(0, Sentences.Length)],
+                  Attach ? new Vector2(0, 20f) : (Vector2) collision.transform.position + new Vector2(0, 20f),
+                  SayTime,
+                  Attach ? collision.gameObject : null);
 
-    // disappear
-    Destroy(gameObject);
+      // disappear
+      Destroy(gameObject);
+    }
   }
 
   /// <summary>
@@ -34,5 +36,10 @@ public class TouchSayer : MonoBehaviour {
   ///   What to say.
   /// </summary>
   public string[] Sentences;
+
+  /// <summary>
+  ///   Collider's tag.
+  /// </summary>
+  public string Tag;
 
 }
