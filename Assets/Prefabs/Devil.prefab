@@ -75,7 +75,7 @@ MonoBehaviour:
   SolidLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  Speed: 80
+  Speed: 100
 --- !u!212 &21278972
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: JumpStrength
