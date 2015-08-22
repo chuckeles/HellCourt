@@ -12,7 +12,7 @@ public class Door : MonoBehaviour {
 
   public void Update() {
     // check input
-    if (Input.GetButtonDown("Use")) {
+    if (Input.GetButtonDown("Jump")) {
       // check distance
       if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
         // teleport devil to other door
