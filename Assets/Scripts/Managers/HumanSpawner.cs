@@ -12,7 +12,10 @@ public class HumanSpawner : MonoBehaviour {
   public void Spawn() {
     if (_spawned < ToSpawn) {
       // create human
-      Instantiate(HumanPrefab, transform.position, Quaternion.identity);
+      var human = Instantiate(HumanPrefab, transform.position, Quaternion.identity) as GameObject;
+
+      // set parent
+      human.transform.parent = GameObject.Find("Characters").transform;
 
       // increase counter
       ++_spawned;
