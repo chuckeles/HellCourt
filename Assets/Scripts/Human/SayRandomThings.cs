@@ -22,7 +22,11 @@ public class SayRandomThings : MonoBehaviour {
     yield return new WaitForSeconds(Random.Range(MinWait, MaxWait));
 
     if (enabled) {
-      if (_saidHello) {
+      if (transform.localRotation.eulerAngles.z > 0) {
+        // we are carried, say ouch
+        _manager.Say(OuchSentences[Random.Range(0, OuchSentences.Length)], new Vector2(0, 20f), 2f, gameObject);
+      }
+      else if (_saidHello) {
         // say random thing
         _manager.Say(Sentences[Random.Range(0, Sentences.Length)], new Vector2(0, 20f), 2f, gameObject);
       }
@@ -40,10 +44,19 @@ public class SayRandomThings : MonoBehaviour {
   /// <summary>
   ///   What to say as hello.
   /// </summary>
-  public string[] HelloSentences = {"Hello.", "Uhm... Hello?", "Hi.", "Heellooo?"};
+  public string[] HelloSentences = {
+    "Hello.", "Uhm... Hello?", "Hi.", "Heellooo?"
+  };
 
   public float MaxWait = 20f;
   public float MinWait = 5f;
+
+  /// <summary>
+  ///   What to say when picked up.
+  /// </summary>
+  public string[] OuchSentences = {
+    "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!"
+  };
 
   /// <summary>
   ///   What to say.
