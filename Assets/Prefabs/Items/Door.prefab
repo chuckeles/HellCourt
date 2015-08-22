@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448874}
   - 212: {fileID: 21211250}
+  - 114: {fileID: 11427250}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -28,6 +29,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11427250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2621b7b15d54944b4e2ec556036fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OtherDoor: {fileID: 0}
+  TriggerDistance: 8
 --- !u!212 &21211250
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,6 +90,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TriggerDistance
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
