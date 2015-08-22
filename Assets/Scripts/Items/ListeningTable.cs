@@ -38,12 +38,6 @@ public class ListeningTable : MonoBehaviour {
       _human.GetComponent<Wander>().enabled = false;
       _human.GetComponent<SayRandomThings>().enabled = false;
 
-      // TODO: Bad design, but it's Ludum Dare, so whatever
-      // destroy the tutorial
-      var tutorial = GameObject.Find("UseTutorial");
-      if (tutorial)
-        Destroy(tutorial);
-
       // start listening procedure
       StartCoroutine(SayDevil());
     }
