@@ -40,7 +40,7 @@ public class Skeleton : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += Time.deltaTime / 2f;
+        sinner.MentalPain += Time.deltaTime;
       }
     }
 
