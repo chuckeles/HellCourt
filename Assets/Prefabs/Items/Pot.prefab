@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 405206}
   - 212: {fileID: 21211008}
   - 60: {fileID: 6012170}
+  - 114: {fileID: 11479330}
   m_Layer: 8
   m_Name: Pot
   m_TagString: Untagged
@@ -48,12 +49,28 @@ PolygonCollider2D:
       - {x: 16, y: 4}
       - {x: 16, y: 20.0237846}
       - {x: 13.3981628, y: 19.987442}
-      - {x: 13.3734283, y: 8.36080551}
-      - {x: 10.8558807, y: 6.2706089}
-      - {x: -11.2188873, y: 6.16932678}
-      - {x: -13.7696686, y: 8.59129333}
+      - {x: 13.3734283, y: 11.2782936}
+      - {x: 10.9326477, y: 8.72743988}
+      - {x: -11.2188873, y: 8.62615967}
+      - {x: -13.4625702, y: 10.5874672}
       - {x: -13.7695465, y: 20.0808868}
       - {x: -16.0617523, y: 20.0855408}
+--- !u!114 &11479330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa232dc29c97ba645931c83c32c5bde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAreaMax: {x: 16, y: 20}
+  DamageAreaMin: {x: -16, y: 10}
+  HumanLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!212 &21211008
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -76,7 +93,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1112692393
+  m_SortingLayerID: 1969601325
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2d7675535883a164e987deecb9a2b9e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +110,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: f3153d8591e629b499e97f4f159a176c, type: 2}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
-      value: 1112692393
+      value: 1969601325
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
@@ -106,6 +123,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DamageAreaMax.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DamageAreaMin.x
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DamageAreaMax.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DamageAreaMin.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HumanLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

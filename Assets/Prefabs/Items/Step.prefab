@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400964}
   - 212: {fileID: 21200010}
   - 61: {fileID: 6109152}
+  - 114: {fileID: 11424370}
   m_Layer: 8
   m_Name: Step
   m_TagString: Untagged
@@ -42,6 +43,25 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 4}
   serializedVersion: 2
   m_Size: {x: 12, y: 8}
+--- !u!114 &11424370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5724428f99ff564f869d35446a94d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DevilPosition: {x: 0, y: 10, z: 0}
+  DevilSayings:
+  - MUHAHAHA!!!
+  - Happy cooking!
+  - Have fun!
+  HumanPosition: {x: 0, y: 32, z: 0}
+  Pot: {fileID: 0}
+  TriggerDistance: 32
 --- !u!212 &21200010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,6 +106,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.x
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DevilPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HumanPosition.y
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

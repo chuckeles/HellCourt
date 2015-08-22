@@ -49,6 +49,12 @@ public class SayRandomThings : MonoBehaviour {
   };
 
   public float MaxWait = 20f;
+
+  /// <summary>
+  ///   Mental pain waiting to be processed, outside of this component.
+  /// </summary>
+  public float MentalPainToProcess = 0f;
+
   public float MinWait = 5f;
 
   /// <summary>
@@ -57,6 +63,11 @@ public class SayRandomThings : MonoBehaviour {
   public string[] OuchSentences = {
     "Ouch!", "Ou!", "That's painful.", "It hurts!", "Put me down...", "Please!"
   };
+
+  /// <summary>
+  ///   Physical pain waiting to be processed, outside of this component.
+  /// </summary>
+  public float PhysicalPainToProcess = 0f;
 
   /// <summary>
   ///   What to say.

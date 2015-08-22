@@ -52,9 +52,9 @@ public class HumanInfo : MonoBehaviour {
   /// </summary>
   private IEnumerator Check() {
     // calculate pain
-    var mentalPain = 0f;
+    var mentalPain = _sinner.MentalPain;
     var requiredMentalPain = _sinner.RequiredMentalPain;
-    var physicalPain = 0f;
+    var physicalPain = _sinner.PhysicalPain;
     var requiredPhysicalPain = _sinner.RequiredPhysicalPain;
 
     if (requiredMentalPain > 0)

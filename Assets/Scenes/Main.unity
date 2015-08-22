@@ -445,6 +445,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 462420, guid: 7d29ccb6220ac8c478d80938694e22fe, type: 2}
   m_PrefabInternal: {fileID: 80878042}
+--- !u!1 &86197262 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190616, guid: 84c711db1df28c0469205eb778dae43a, type: 2}
+  m_PrefabInternal: {fileID: 1012962458}
 --- !u!1001 &117224765
 Prefab:
   m_ObjectHideFlags: 0
@@ -2694,6 +2698,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11424370, guid: eb88fed9338228247bac48e7da15f5d2, type: 2}
+      propertyPath: Pot
+      value: 
+      objectReference: {fileID: 86197262}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb88fed9338228247bac48e7da15f5d2, type: 2}
   m_IsPrefabParent: 0
