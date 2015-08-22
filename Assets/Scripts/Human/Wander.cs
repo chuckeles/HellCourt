@@ -10,9 +10,17 @@ public class Wander : MonoBehaviour {
   public void Awake() {
     // get components
     _body = GetComponent<Rigidbody2D>();
+    _sinner = GetComponent<Sinner>();
   }
 
   public void FixedUpdate() {
+    // check pain
+    if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f || _sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
+      // don't wander in pain
+      enabled = false;
+      return;
+    }
+
     // update velocity according to wandering state
     if (_wandering) {
       _body.velocity = new Vector2(Speed * Mathf.Sign(_remaining), _body.velocity.y);
@@ -70,6 +78,11 @@ public class Wander : MonoBehaviour {
   ///   Remaining distance to wander.
   /// </summary>
   private float _remaining;
+
+  /// <summary>
+  ///   The sinner component.
+  /// </summary>
+  private Sinner _sinner;
 
   /// <summary>
   ///   Currently wandering.
