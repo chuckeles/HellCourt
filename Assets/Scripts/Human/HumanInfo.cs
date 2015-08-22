@@ -23,38 +23,60 @@ public class HumanInfo : MonoBehaviour {
     // move down
     _info.transform.localPosition = Offset;
 
-    // set text
-    _info.GetComponentInChildren<Text>().text = string.Format("{0} sins\n{1}/{2} mental pain\n{3}/{4} physical pain",
-                                                              _sinner.Sins.Count,
-                                                              _sinner.MentalPain,
-                                                              _sinner.RequiredMentalPain,
-                                                              _sinner.PhysicalPain,
-                                                              _sinner.RequiredPhysicalPain);
-
-    // show/hide
-    _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered;
-
     // start checking
     StartCoroutine(Check());
+  }
+
+  /// <summary>
+  ///   Get pain string from pain.
+  /// </summary>
+  private string GetPainString(float pain) {
+    if (pain > 10f)
+      return "Craaaaaazy";
+    if (pain > 5)
+      return "Extreme";
+    if (pain > 4)
+      return "Monstrous";
+    if (pain > 2)
+      return "Huge";
+    if (pain > 1)
+      return "Major";
+    if (pain > 0.1)
+      return "Minor";
+
+    return "No";
   }
 
   /// <summary>
   ///   Checks and updates the UI.
   /// </summary>
   private IEnumerator Check() {
-    // wait
-    yield return new WaitForSeconds(1f);
+    // calculate pain
+    var mentalPain = 0f;
+    var requiredMentalPain = _sinner.RequiredMentalPain;
+    var physicalPain = 0f;
+    var requiredPhysicalPain = _sinner.RequiredPhysicalPain;
+
+    if (requiredMentalPain > 0)
+      mentalPain /= requiredMentalPain;
+    if (requiredPhysicalPain > 0)
+      physicalPain /= requiredPhysicalPain;
+
+    // create pain strings
+    var mentalPainString = GetPainString(mentalPain);
+    var physicalPainString = GetPainString(physicalPain);
 
     // set text
-    _info.GetComponentInChildren<Text>().text = string.Format("{0} sins\n{1}/{2} mental pain\n{3}/{4} physical pain",
+    _info.GetComponentInChildren<Text>().text = string.Format("{0} sins\n{1} mental pain\n{2} physical pain",
                                                               _sinner.Sins.Count,
-                                                              _sinner.MentalPain,
-                                                              _sinner.RequiredMentalPain,
-                                                              _sinner.PhysicalPain,
-                                                              _sinner.RequiredPhysicalPain);
+                                                              mentalPainString,
+                                                              physicalPainString);
 
     // show/hide
     _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered;
+
+    // wait
+    yield return new WaitForSeconds(1f);
 
     // repeat
     StartCoroutine(Check());
