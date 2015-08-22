@@ -94,6 +94,8 @@ public class Statue : MonoBehaviour {
         _dialogManager.Say(GoodHumanSentences[Random.Range(0, WinSentences.Length)],
                            transform.position + new Vector3(0, 40f),
                            4f);
+
+        AcceptHuman(human);
       }
       else {
         // human is bad
@@ -114,6 +116,14 @@ public class Statue : MonoBehaviour {
       // deactivate
       StartCoroutine(DeactivateAfter(4f));
     }
+  }
+
+  /// <summary>
+  /// Accept a human.
+  /// </summary>
+  private void AcceptHuman(GameObject human) {
+    // add designated component :P
+    human.AddComponent<Acceptor>();
   }
 
   /// <summary>
