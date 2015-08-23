@@ -58,6 +58,9 @@ TagManager:
   - name: ItemsAbove
     uniqueID: 1969601325
     locked: 0
+  - name: Particles
+    uniqueID: 626017499
+    locked: 0
   - name: UI
     uniqueID: 3774745255
     locked: 0

@@ -89,6 +89,9 @@ public class HealingTable : MonoBehaviour {
     // spawn a potion
     var potion = Instantiate(PotionPrefab, transform.position + PotionPosition, Quaternion.identity) as GameObject;
 
+    // parent
+    potion.transform.parent = transform;
+
     // throw it
     potion.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-35f, -25f), 120);
 

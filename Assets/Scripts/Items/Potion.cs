@@ -22,7 +22,7 @@ public class Potion : MonoBehaviour {
       }
     }
 
-    if (closestHuman) {
+    if (closestHuman && closestDistance < MaxHealDistance) {
       // get sinner
       var sinner = closestHuman.GetComponent<Sinner>();
 
@@ -33,6 +33,13 @@ public class Potion : MonoBehaviour {
       sinner.PhysicalPain = Mathf.Clamp(sinner.PhysicalPain, 0, float.MaxValue);
     }
 
+    // spawn a particle system
+    var ps = Instantiate(ParticleSystemPrefab);
+    ps.transform.position = transform.position;
+
+    // parent
+    ps.transform.parent = transform.parent;
+
     // destroy
     Destroy(gameObject);
   }
@@ -41,6 +48,11 @@ public class Potion : MonoBehaviour {
   ///   Max distance to heal.
   /// </summary>
   public float MaxHealDistance = 64f;
+
+  /// <summary>
+  ///   Particle system prefabs.
+  /// </summary>
+  public GameObject ParticleSystemPrefab;
 
   /// <summary>
   ///   How much to reduce pain.
