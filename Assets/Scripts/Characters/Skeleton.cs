@@ -16,7 +16,8 @@ public class Skeleton : MonoBehaviour {
 
     // start stuff
     StartCoroutine(Hurt());
-    StartCoroutine(Pick());
+    if (_picking)
+      StartCoroutine(Pick());
   }
 
   /// <summary>

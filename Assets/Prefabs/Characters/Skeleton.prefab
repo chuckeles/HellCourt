@@ -181,7 +181,7 @@ MonoBehaviour:
   HumanLayer:
     serializedVersion: 2
     m_Bits: 512
-  HurtRadius: 96
+  HurtRadius: 64
   PickSentences:
   - Get over here.
   - Hehehe.
@@ -276,7 +276,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: HurtRadius
-      value: 96
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Radius

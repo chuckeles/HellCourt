@@ -57,7 +57,7 @@ MonoBehaviour:
   HumanLayer:
     serializedVersion: 2
     m_Bits: 512
-  HurtRadius: 16
+  HurtRadius: 20
   InflictedPain: .100000001
 --- !u!212 &21298940
 SpriteRenderer:
@@ -123,7 +123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: HurtRadius
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InflictedPain

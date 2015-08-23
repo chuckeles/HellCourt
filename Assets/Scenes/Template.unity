@@ -130,6 +130,10 @@ Prefab:
       propertyPath: orthographic size
       value: 58.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11490332, guid: 0aa49a3384ff3c94fad9bb7395e814bc, type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1070315662}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0aa49a3384ff3c94fad9bb7395e814bc, type: 2}
   m_IsPrefabParent: 0
@@ -382,6 +386,10 @@ Prefab:
 --- !u!4 &1070315661 stripped
 Transform:
   m_PrefabParentObject: {fileID: 486100, guid: e518bbdf81d79bc4bb6e93d9e724670e, type: 2}
+  m_PrefabInternal: {fileID: 1070315660}
+--- !u!1 &1070315662 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 154186, guid: e518bbdf81d79bc4bb6e93d9e724670e, type: 2}
   m_PrefabInternal: {fileID: 1070315660}
 --- !u!1001 &1223024010
 Prefab:

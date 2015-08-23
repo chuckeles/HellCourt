@@ -73,11 +73,11 @@ public class HumanInfo : MonoBehaviour {
     if (requiredMentalPain > 0.01f)
       mentalPain /= requiredMentalPain;
     else
-      mentalPain /= 10f;
+      mentalPain /= 20f;
     if (requiredPhysicalPain > 0.01f)
       physicalPain /= requiredPhysicalPain;
     else
-      physicalPain /= 10f;
+      physicalPain /= 20f;
 
     // create pain strings
     var mentalPainString = GetPainString(mentalPain, requiredMentalPain > 0.01f);
