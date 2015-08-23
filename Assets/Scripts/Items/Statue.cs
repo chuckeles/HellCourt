@@ -130,7 +130,7 @@ public class Statue : MonoBehaviour {
         }
         else {
           // mental required
-          _score *= Mathf.Lerp(1f, 0f, (sinner.MentalPain / mentalRequired) / 20f);
+          _score *= Mathf.Lerp(1f, 0.1f, (sinner.MentalPain / mentalRequired) / 10f);
         }
 
         if (physicalRequired < 0.01) {
@@ -140,7 +140,7 @@ public class Statue : MonoBehaviour {
         }
         else {
           // physical required
-          _score *= Mathf.Lerp(1f, 0f, (sinner.PhysicalPain / physicalRequired) / 20f);
+          _score *= Mathf.Lerp(1f, 0.1f, (sinner.PhysicalPain / physicalRequired) / 10f);
         }
       }
       else {

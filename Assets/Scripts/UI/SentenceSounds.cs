@@ -19,7 +19,7 @@ public class SentenceSounds : MonoBehaviour {
                                                   0.1f);
 
     // lower volume
-    sound.volume *= 0.5f;
+    sound.volume *= 0.4f;
 
     // wait
     yield return new WaitForSeconds(Random.Range(sound.clip.length, sound.clip.length * 1.5f));

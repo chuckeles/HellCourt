@@ -81,11 +81,11 @@ public class AudioUtil {
   /// <summary>
   ///   Maximum hearing range.
   /// </summary>
-  public static float MaxHearingDistance = 128f;
+  public static float MaxHearingDistance = 200f;
 
   /// <summary>
   ///   Where to pan fully.
   /// </summary>
-  public static float MaxPanDistance = 32f;
+  public static float MaxPanDistance = 100f;
 
 }

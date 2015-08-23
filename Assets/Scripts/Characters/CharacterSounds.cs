@@ -7,7 +7,7 @@ public class CharacterSounds : MonoBehaviour {
 
   public void OnCollisionEnter2D(Collision2D collision) {
     // check the collision
-    if (collision.relativeVelocity.y < -100f)
+    if (collision.relativeVelocity.y < -150f)
       // play sound
       PlayLand();
   }
