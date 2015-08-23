@@ -17,6 +17,18 @@ public class Statue : MonoBehaviour {
     _devil.GetComponent<Picking>().OnDropped += HumanDropped;
   }
 
+  public void Start() {
+    // get saved levels
+    var levels = new List<string>(PlayerPrefsX.GetStringArray("FinishedLevels"));
+
+    // add this one if not there yet
+    if (!levels.Contains(Application.loadedLevelName))
+      levels.Add(Application.loadedLevelName);
+
+    // set saved levels
+    PlayerPrefsX.SetStringArray("FinishedLevels", levels.ToArray());
+  }
+
   public void Update() {
     // check input
     if (!_active && Input.GetButtonDown("Use")) {
@@ -169,16 +181,6 @@ public class Statue : MonoBehaviour {
   ///   Save stuff to playerprefs.
   /// </summary>
   private void SaveLevel() {
-    // get saved levels
-    var levels = new List<string>(PlayerPrefsX.GetStringArray("FinishedLevels"));
-
-    // add this one if not there yet
-    if (!levels.Contains(Application.loadedLevelName))
-      levels.Add(Application.loadedLevelName);
-
-    // set saved levels
-    PlayerPrefsX.SetStringArray("FinishedLevels", levels.ToArray());
-
     // get saved information
     var savedTime = PlayerPrefs.GetFloat(Application.loadedLevelName + "Time", float.MaxValue);
     var savedScore = PlayerPrefs.GetFloat(Application.loadedLevelName + "Score", 0);
@@ -188,6 +190,9 @@ public class Statue : MonoBehaviour {
     if (currentTime < savedTime)
       // save
       PlayerPrefs.SetFloat(Application.loadedLevelName + "Time", currentTime);
+
+    // clamp score
+    _score = Mathf.Clamp01(_score);
 
     // check current score
     if (_score > savedScore)
