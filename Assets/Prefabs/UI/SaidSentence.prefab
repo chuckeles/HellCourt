@@ -28,6 +28,7 @@ GameObject:
   - 223: {fileID: 22330238}
   - 114: {fileID: 11490580}
   - 114: {fileID: 11405462}
+  - 114: {fileID: 11450058}
   m_Layer: 5
   m_Name: SaidSentence
   m_TagString: Untagged
@@ -77,6 +78,22 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Say something...
+--- !u!114 &11450058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25f68c44458df44684d66d8ebb8e998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pitch: 1
+  SaySounds:
+  - {fileID: 8300000, guid: 98dcb66632798624e8d0bd92e6a08291, type: 3}
+  - {fileID: 8300000, guid: 8722c99dbbda72340a3bb5ef22e0af3a, type: 3}
+  - {fileID: 8300000, guid: 33b2c14f56b92af40afc2391e3e2e525, type: 3}
 --- !u!114 &11490580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,6 +180,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: SaySounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.x
       value: .5

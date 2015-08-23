@@ -27,12 +27,15 @@ public class AudioUtil {
   /// <summary>
   ///   Play a clip.
   /// </summary>
-  public static AudioSource PlayAtPositionWithRandomPitch(Vector2 position, AudioClip clip) {
+  public static AudioSource PlayAtPositionWithPitch(Vector2 position,
+                                                    AudioClip clip,
+                                                    float pitch = 1f,
+                                                    float randomOffset = 0.2f) {
     // create audio
     var audio = CreateAudioObject(position, clip);
 
     // modify pitch
-    audio.pitch = Random.Range(0.8f, 1.2f);
+    audio.pitch = Random.Range(pitch - randomOffset, pitch + randomOffset);
 
     return audio;
   }
