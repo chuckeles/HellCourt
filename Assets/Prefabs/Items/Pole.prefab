@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 465754}
   - 212: {fileID: 21226016}
   - 61: {fileID: 6188078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,6 +80,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a5b3112ab2fb03f4bb5c75ebd086991c,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165466}
