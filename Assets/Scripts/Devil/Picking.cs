@@ -63,6 +63,7 @@ public class Picking : MonoBehaviour {
 
     // re-enable components
     _pickedHuman.GetComponent<Rigidbody2D>().isKinematic = false;
+    _pickedHuman.GetComponent<MovementScaler>().enabled = true;
     _pickedHuman.GetComponent<Wander>().enabled = true;
 
     _pickedHuman.GetComponent<Rigidbody2D>().WakeUp();
@@ -91,6 +92,7 @@ public class Picking : MonoBehaviour {
 
     // disable human's components
     human.GetComponent<Wander>().enabled = false;
+    human.GetComponent<MovementScaler>().enabled = false;
     human.GetComponent<Rigidbody2D>().isKinematic = true;
 
     // set picked

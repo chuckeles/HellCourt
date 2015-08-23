@@ -17,9 +17,12 @@ public class MovementScaler : MonoBehaviour {
 
     // scale
     if (Mathf.Abs(vx) > 0.1f)
-      transform.localScale = new Vector3(Mathf.Sign(vx) * Mathf.Abs(transform.localScale.x),
-                                         transform.localScale.y,
-                                         transform.localScale.z);
+      transform.localScale = new Vector3(Mathf.Sign(vx), transform.localScale.y, transform.localScale.z);
+
+    // unscale children
+    foreach (Transform child in transform) {
+      child.localScale = new Vector3(transform.localScale.x, child.localScale.y, child.localScale.z);
+    }
   }
 
   /// <summary>
