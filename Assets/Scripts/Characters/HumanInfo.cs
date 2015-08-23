@@ -89,8 +89,8 @@ public class HumanInfo : MonoBehaviour {
                                                               mentalPainString,
                                                               physicalPainString);
 
-    // show/hide
-    _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered && !GetComponent<Pickable>().Picked;
+    // show / hide
+    _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered; // && !GetComponent<Pickable>().Picked;
 
     // wait
     yield return new WaitForSeconds(.2f);
