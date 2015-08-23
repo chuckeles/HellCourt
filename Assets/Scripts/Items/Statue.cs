@@ -119,18 +119,20 @@ public class Statue : MonoBehaviour {
         AcceptHuman(human);
 
         // update level score
-        if (mentalRequired < 0.01 && sinner.MentalPain > 20f) {
+        if (mentalRequired < 0.01) {
           // mental not required
-          _score *= Mathf.Lerp(1f, 0.9f, (sinner.MentalPain - 20f) / 80f);
+          if (sinner.MentalPain > 20f)
+            _score *= Mathf.Lerp(1f, 0.9f, (sinner.MentalPain - 20f) / 80f);
         }
         else {
           // mental required
           _score *= Mathf.Lerp(1f, 0f, (sinner.MentalPain / mentalRequired) / 20f);
         }
 
-        if (physicalRequired < 0.01 && sinner.PhysicalPain > 20f) {
+        if (physicalRequired < 0.01) {
           // physical not required
-          _score *= Mathf.Lerp(1f, 0.9f, (sinner.PhysicalPain - 20f) / 80f);
+          if (sinner.PhysicalPain > 20f)
+            _score *= Mathf.Lerp(1f, 0.9f, (sinner.PhysicalPain - 20f) / 80f);
         }
         else {
           // physical required
@@ -183,7 +185,7 @@ public class Statue : MonoBehaviour {
   private void SaveLevel() {
     // get saved information
     var savedTime = PlayerPrefs.GetFloat(Application.loadedLevelName + "Time", float.MaxValue);
-    var savedScore = PlayerPrefs.GetFloat(Application.loadedLevelName + "Score", 0);
+    var savedScore = PlayerPrefs.GetFloat(Application.loadedLevelName + "Score", float.MinValue);
 
     // check current time
     var currentTime = Time.timeSinceLevelLoad;
