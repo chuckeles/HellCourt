@@ -34,6 +34,13 @@ public class MenuManager : MonoBehaviour {
   public void Update() {
     // check input
     if (Input.GetButtonDown("Cancel")) {
+      // check if highscores present
+      var high = GameObject.FindWithTag("Highscores");
+      if (high) {
+        // destroy it
+        Destroy(high);
+      }
+
       // check if menu present
       var menu = GameObject.FindWithTag("Menu");
       if (menu) {
@@ -48,7 +55,32 @@ public class MenuManager : MonoBehaviour {
         newMenu.transform.SetParent(transform, false);
       }
     }
+    if (Input.GetButtonDown("Highscores")) {
+      // check if menu present
+      var menu = GameObject.FindWithTag("Menu");
+
+      if (!menu) {
+        // check if highscores present
+        var high = GameObject.FindWithTag("Highscores");
+        if (high) {
+          // destroy it
+          Destroy(high);
+        }
+        else {
+          // show menu
+          var newHigh = Instantiate(HighscoresPrefab);
+
+          // parent to me
+          newHigh.transform.SetParent(transform, false);
+        }
+      }
+    }
   }
+
+  /// <summary>
+  ///   Highscores prefab please.
+  /// </summary>
+  public GameObject HighscoresPrefab;
 
   /// <summary>
   ///   Menu prefab please.
