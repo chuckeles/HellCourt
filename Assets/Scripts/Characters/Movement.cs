@@ -54,6 +54,11 @@ public class Movement : MonoBehaviour {
     if (verticalHit && jumpInput) {
       // jump
       newVelocity.y = JumpStrength;
+
+      // play sound
+      var sounds = GetComponent<MovementSounds>();
+      if (sounds)
+        sounds.PlayJump();
     }
 
     // update velocity
