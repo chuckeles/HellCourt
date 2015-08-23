@@ -21,6 +21,9 @@ public class Picking : MonoBehaviour {
   ///   Performs checks and picks / drops human.
   /// </summary>
   public void CheckPick() {
+    if (!enabled)
+      return;
+
     if (_picked)
       DropHuman();
     else {
@@ -80,10 +83,13 @@ public class Picking : MonoBehaviour {
     _picked.GetComponent<Pickable>().Picked = false;
 
     // re-enable components
+    var picking = _picked.GetComponent<Picking>();
     var body = _picked.GetComponent<Rigidbody2D>();
     var movementScaler = _picked.GetComponent<MovementScaler>();
     var wander = _picked.GetComponent<Wander>();
 
+    if (picking)
+      picking.enabled = true;
     if (body) {
       body.isKinematic = false;
       body.velocity = _body.velocity * 1.5f;
@@ -133,6 +139,7 @@ public class Picking : MonoBehaviour {
     var wander = human.GetComponent<Wander>();
     var movementScaler = human.GetComponent<MovementScaler>();
     var body = human.GetComponent<Rigidbody2D>();
+    var picking = human.GetComponent<Picking>();
 
     if (wander)
       wander.enabled = false;
@@ -140,6 +147,10 @@ public class Picking : MonoBehaviour {
       movementScaler.enabled = false;
     if (body)
       body.isKinematic = true;
+    if (picking) {
+      picking.DropHuman();
+      picking.enabled = false;
+    }
 
     // set picked
     human.GetComponent<Pickable>().Picked = true;

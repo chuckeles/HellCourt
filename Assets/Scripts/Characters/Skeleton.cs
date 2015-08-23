@@ -71,7 +71,7 @@ public class Skeleton : MonoBehaviour {
       // say random thing
       GameObject.Find("DialogManager")
                 .GetComponent<DialogManager>()
-                .Say(PickSentences[Random.Range(0, PickSentences.Length)], new Vector2(0, 24f), 2f, gameObject);
+                .Say(PickSentences[Random.Range(0, PickSentences.Length)], new Vector2(0, 30f), 2f, gameObject);
 
     // repeat
     StartCoroutine(Pick());
