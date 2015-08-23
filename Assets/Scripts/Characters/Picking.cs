@@ -120,9 +120,12 @@ public class Picking : MonoBehaviour {
     // wait
     yield return new WaitForSeconds(time);
 
-    // enable if not picked
-    if (!b.GetComponent<Pickable>().Picked)
-      b.enabled = true;
+    // check
+    if (b)
+
+      // enable if not picked
+      if (!b.GetComponent<Pickable>().Picked)
+        b.enabled = true;
   }
 
   /// <summary>

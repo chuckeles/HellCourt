@@ -70,14 +70,18 @@ public class HumanInfo : MonoBehaviour {
     var physicalPain = _sinner.PhysicalPain;
     var requiredPhysicalPain = _sinner.RequiredPhysicalPain;
 
-    if (requiredMentalPain > 0)
+    if (requiredMentalPain > 0.01f)
       mentalPain /= requiredMentalPain;
-    if (requiredPhysicalPain > 0)
+    else
+      mentalPain /= 10f;
+    if (requiredPhysicalPain > 0.01f)
       physicalPain /= requiredPhysicalPain;
+    else
+      physicalPain /= 10f;
 
     // create pain strings
-    var mentalPainString = GetPainString(mentalPain, requiredMentalPain > 0f);
-    var physicalPainString = GetPainString(physicalPain, requiredPhysicalPain > 0f);
+    var mentalPainString = GetPainString(mentalPain, requiredMentalPain > 0.01f);
+    var physicalPainString = GetPainString(physicalPain, requiredPhysicalPain > 0.01f);
 
     // set text
     _info.GetComponentInChildren<Text>().text = string.Format("{0} sins\n{1} mental pain\n{2} physical pain",
