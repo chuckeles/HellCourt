@@ -7,14 +7,16 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour {
 
   public void Start() {
-    // get manager
+    // get stuff
     _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    _picking = GetComponent<Picking>();
 
     // spy on human dropping
     GameObject.FindWithTag("Player").GetComponent<Picking>().OnDropped += HumanDropped;
 
-    // start hurting
+    // start stuff
     StartCoroutine(Hurt());
+    StartCoroutine(Pick());
   }
 
   /// <summary>
@@ -55,6 +57,27 @@ public class Skeleton : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Pick stuff.
+  /// </summary>
+  private IEnumerator Pick() {
+    // wait
+    yield return new WaitForSeconds(Random.Range(10f, 20f));
+
+    // try to pick / drop stuff
+    _picking.CheckPick();
+
+    // if picked
+    if (_picking.IsCarrying())
+      // say random thing
+      GameObject.Find("DialogManager")
+                .GetComponent<DialogManager>()
+                .Say(PickSentences[Random.Range(0, PickSentences.Length)], new Vector2(0, 24f), 2f, gameObject);
+
+    // repeat
+    StartCoroutine(Pick());
+  }
+
+  /// <summary>
   ///   What to say when human is dropped nearby.
   /// </summary>
   public string[] DropSentences = {
@@ -75,8 +98,21 @@ public class Skeleton : MonoBehaviour {
   public float HurtRadius = 32f;
 
   /// <summary>
+  ///   What to say when picking objects.
+  /// </summary>
+  public string[] PickSentences = {
+    "Get over here.", "Hehehe.", "Hahahaha.", "Bu!", "I got you.", "Come here!", "Muhaha.", "Let's play!",
+    "Let's have some fun.", "Scared enough?", "I'm strong...", "How much do you weight?", "Ufff..."
+  };
+
+  /// <summary>
   ///   The level manager.
   /// </summary>
   private LevelManager _levelManager;
+
+  /// <summary>
+  ///   Picking component.
+  /// </summary>
+  private Picking _picking;
 
 }

@@ -25,11 +25,14 @@ public class Picking : MonoBehaviour {
       DropHuman();
     else {
       // find closest human
-      var humans = GameObject.FindObjectsOfType<Pickable>();
+      var humans = FindObjectsOfType<Pickable>();
       GameObject closestHuman = null;
       var closestDistance = float.MaxValue;
 
       foreach (var human in humans) {
+        if (human.gameObject == gameObject)
+          continue;
+
         // get distance
         var d = (human.transform.position - transform.position).sqrMagnitude;
 
@@ -44,6 +47,13 @@ public class Picking : MonoBehaviour {
       if (closestDistance < PickRange * PickRange)
         PickHuman(closestHuman);
     }
+  }
+
+  /// <summary>
+  ///   True if carrying something.
+  /// </summary>
+  public bool IsCarrying() {
+    return _picked;
   }
 
   public void Update() {
@@ -86,7 +96,7 @@ public class Picking : MonoBehaviour {
 
 
     // fire event
-    if (OnDropped != null && _picked.tag == "Human")
+    if (OnDropped != null && _picked.tag == "Human" && tag == "Player")
       OnDropped(_picked);
 
     // reset variable
