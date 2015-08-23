@@ -45,6 +45,16 @@ public class FillTable : MonoBehaviour {
       row.transform.GetChild(0).GetComponent<Text>().text = name;
       row.transform.GetChild(1).GetComponent<Text>().text = timeString;
       row.transform.GetChild(2).GetComponent<Text>().text = scoreString;
+
+      // add a button
+      var button = row.AddComponent<Button>();
+
+      // find menu manager
+      var manager = FindObjectOfType<MenuManager>();
+
+      // set it up
+      button.transition = Selectable.Transition.None;
+      button.onClick.AddListener(() => manager.Load(name));
     }
   }
 

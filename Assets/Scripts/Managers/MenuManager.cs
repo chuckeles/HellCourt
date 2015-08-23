@@ -13,6 +13,18 @@ public class MenuManager : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Loads a level.
+  /// </summary>
+  public void Load(string levelName) {
+    try {
+      Application.LoadLevel(levelName);
+    }
+    catch (UnityException) {
+      Debug.Log("Could not load level " + levelName);
+    }
+  }
+
+  /// <summary>
   ///   Restarts the level.
   /// </summary>
   public void Restart() {
