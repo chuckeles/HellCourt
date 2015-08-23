@@ -54,7 +54,7 @@ public class Picking : MonoBehaviour {
     _pickedHuman.transform.parent = _originalHumanParent;
 
     // re-enable components
-    _pickedHuman.GetComponent<Collider2D>().enabled = true;
+    //_pickedHuman.GetComponent<Collider2D>().enabled = true;
     _pickedHuman.AddComponent<Rigidbody2D>();
     _pickedHuman.AddComponent<Wander>();
 
@@ -83,7 +83,7 @@ public class Picking : MonoBehaviour {
     _pickedHuman = human;
 
     // disable human's components
-    human.GetComponent<Collider2D>().enabled = false;
+    //human.GetComponent<Collider2D>().enabled = false;
     Destroy(human.GetComponent<Wander>());
     Destroy(human.GetComponent<Rigidbody2D>());
 
