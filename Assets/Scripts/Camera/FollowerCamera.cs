@@ -8,33 +8,28 @@ public class FollowerCamera : MonoBehaviour {
 
   public void Awake() {
     // get components
-    _camera = GetComponent<Camera>();
+    GetComponent<Camera>();
   }
 
   public void Update() {
-    // get target's viewport position
-    var viewPos = _camera.WorldToViewportPoint(Target.transform.position + (Vector3) Offset);
-    viewPos.x = viewPos.x * 2 - 1;
-    viewPos.y = viewPos.y * 2 - 1;
+    // get direction
+    var direction = Target.transform.position + (Vector3) Offset - transform.position;
+    direction.z = 0;
 
-    // if out of deadzone
-    if (Mathf.Max(Mathf.Abs(viewPos.x), Mathf.Abs(viewPos.y)) > DeadZone) {
-      // get direction
-      var direction = Target.transform.position + (Vector3) Offset - transform.position;
-      direction.z = 0;
+    var magnitude = direction.magnitude;
+    if (magnitude > Deadzone) {
+      // apply deadzone
+      var l = magnitude - Deadzone;
+      l = Mathf.Clamp(l, 0f, float.MaxValue);
 
-      // normalize
-      direction.Normalize();
-
-      // move
-      transform.Translate(direction * Speed * Time.deltaTime);
+      direction *= l / magnitude;
     }
-  }
+    else
+      direction = new Vector3();
 
-  /// <summary>
-  ///   Dead zone in viewport coordinates.
-  /// </summary>
-  public float DeadZone = 0.4f;
+    // move
+    transform.Translate(direction * Speed * Time.deltaTime);
+  }
 
   /// <summary>
   ///   Target point offset.
@@ -44,16 +39,16 @@ public class FollowerCamera : MonoBehaviour {
   /// <summary>
   ///   Translation speed.
   /// </summary>
-  public float Speed = 10f;
+  public float Speed = 1f;
+
+  /// <summary>
+  /// Deadzone.
+  /// </summary>
+  public float Deadzone = 16f;
 
   /// <summary>
   ///   Target to follow.
   /// </summary>
   public GameObject Target;
-
-  /// <summary>
-  ///   The camera component.
-  /// </summary>
-  private Camera _camera;
 
 }

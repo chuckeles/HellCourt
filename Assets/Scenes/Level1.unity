@@ -1255,6 +1255,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1829546957}
     m_Modifications:
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: Goals.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 471474, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1290,6 +1294,18 @@ Prefab:
     - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
       propertyPath: PainMultiplier
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: Goals.Array.data[0].Number
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: MinHumans
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
+      propertyPath: MaxHumans
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6eff4fd3a339b814e956e8fa6f344398, type: 2}
