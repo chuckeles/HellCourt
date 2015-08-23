@@ -17,11 +17,11 @@ public class Wander : MonoBehaviour {
     // check pain
     var mult = 1f;
     if (_sinner) {
-      if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f) {
+      if (_sinner.MentalPain > _sinner.RequiredMentalPain) {
         // panic, wander faster
         mult = 2f;
       }
-      if (_sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
+      if (_sinner.PhysicalPain > _sinner.RequiredPhysicalPain) {
         // hurt, barely move
         mult = .2f;
       }
@@ -59,7 +59,7 @@ public class Wander : MonoBehaviour {
       // check pain
       var mult = 1f;
       if (_sinner) {
-        if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f) {
+        if (_sinner.MentalPain > _sinner.RequiredMentalPain) {
           // wander farther
           mult = 3f;
         }

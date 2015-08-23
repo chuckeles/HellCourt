@@ -12,6 +12,7 @@ public class AnimatorUpdater : MonoBehaviour {
     _body = GetComponent<Rigidbody2D>();
     _collider = GetComponent<CircleCollider2D>();
     _pickable = GetComponent<Pickable>();
+    _sinner = GetComponent<Sinner>();
   }
 
   public void Update() {
@@ -19,19 +20,21 @@ public class AnimatorUpdater : MonoBehaviour {
     _animator.SetFloat("Velocity", Mathf.Abs(_body.velocity.x));
 
     // update carried
-    var carried = false;
-    if (_pickable) {
-      carried = _pickable.Picked;
-      _animator.SetBool("Carried", carried);
-    }
+    if (_pickable)
+    _animator.SetBool("Carried", _pickable.Picked);
 
     // update falling
-    if (!carried)
-      _animator.SetBool("Falling",
-                        !Physics2D.OverlapCircle((Vector2) transform.position +
-                                                 new Vector2(_collider.offset.x, _collider.offset.y - 4f),
-                                                 _collider.radius,
-                                                 SolidLayerMask));
+    _animator.SetBool("Falling",
+                      !Physics2D.OverlapCircle((Vector2) transform.position +
+                                               new Vector2(_collider.offset.x, _collider.offset.y - 4f),
+                                               _collider.radius,
+                                               SolidLayerMask));
+
+    // update pain
+    if (_sinner) {
+      _animator.SetFloat("MentalPain", _sinner.MentalPain / _sinner.RequiredMentalPain);
+      _animator.SetFloat("PhysicalPain", _sinner.PhysicalPain / _sinner.RequiredPhysicalPain);
+    }
   }
 
   /// <summary>
@@ -58,5 +61,10 @@ public class AnimatorUpdater : MonoBehaviour {
   ///   The pick-able component.
   /// </summary>
   private Pickable _pickable;
+
+  /// <summary>
+  ///   Sinner component.
+  /// </summary>
+  private Sinner _sinner;
 
 }

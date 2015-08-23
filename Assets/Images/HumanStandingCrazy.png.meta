@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: a1abdea59566282498f880eca6fe72bb
-timeCreated: 1440219818
+guid: 4af0684cb745dc9409f8c882cc191943
+timeCreated: 1440331145
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: HumanStandingCrazy_0
+    21300002: HumanStandingCrazy_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,10 +39,10 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
@@ -48,8 +50,28 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-  spritePackingTag: 
+    sprites:
+    - name: HumanStandingCrazy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HumanStandingCrazy_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: Characters
   userData: 
   assetBundleName: 
   assetBundleVariant: 
