@@ -15,24 +15,28 @@ public class Wander : MonoBehaviour {
 
   public void FixedUpdate() {
     // check pain
-    if (_sinner)
-      if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f ||
-          _sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
-        // don't wander in pain
-        enabled = false;
-        return;
+    var mult = 1f;
+    if (_sinner) {
+      if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f) {
+        // panic, wander faster
+        mult = 2f;
       }
+      if (_sinner.PhysicalPain > _sinner.RequiredPhysicalPain * 3f) {
+        // hurt, barely move
+        mult = .2f;
+      }
+    }
 
     // update velocity according to wandering state
     if (_wandering) {
-      _body.velocity = new Vector2(Speed * Mathf.Sign(_remaining), _body.velocity.y);
+      _body.velocity = new Vector2(mult * Speed * Mathf.Sign(_remaining), _body.velocity.y);
 
-      if (Mathf.Abs(_remaining) < Speed * Time.fixedDeltaTime) {
+      if (Mathf.Abs(_remaining) < mult * Speed * Time.fixedDeltaTime) {
         _remaining = 0;
         _wandering = false;
       }
       else
-        _remaining -= Speed * Mathf.Sign(_remaining) * Time.fixedDeltaTime;
+        _remaining -= mult * Speed * Mathf.Sign(_remaining) * Time.fixedDeltaTime;
     }
     else if (enabled)
       _body.velocity = new Vector2(0, _body.velocity.y);
@@ -52,9 +56,18 @@ public class Wander : MonoBehaviour {
 
     // preconditions
     if (enabled && !_wandering) {
+      // check pain
+      var mult = 1f;
+      if (_sinner) {
+        if (_sinner.MentalPain > _sinner.RequiredMentalPain * 3f) {
+          // wander farther
+          mult = 3f;
+        }
+      }
+
       // start wandering
       _wandering = true;
-      _remaining += Random.Range(-MaxWanderDistance, MaxWanderDistance);
+      _remaining += Random.Range(-MaxWanderDistance * mult, MaxWanderDistance * mult);
     }
 
     // repeat

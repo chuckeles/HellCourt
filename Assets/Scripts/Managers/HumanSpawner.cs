@@ -36,10 +36,13 @@ public class HumanSpawner : MonoBehaviour {
   /// </summary>
   private IEnumerator SpawnHumans() {
     // wait
-    yield return new WaitForSeconds(Random.Range(4, 6));
+    yield return new WaitForSeconds(Random.Range(3, 5));
 
     // spawn
     Spawn();
+
+    // wait more
+    yield return new WaitForSeconds(Random.Range(5, 10));
 
     // repeat
     StartCoroutine(SpawnHumans());

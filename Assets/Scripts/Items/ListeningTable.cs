@@ -35,8 +35,13 @@ public class ListeningTable : MonoBehaviour {
       _human.transform.position = transform.position + HumanPosition;
 
       // disable wander and saying
+      _human.GetComponent<Wander>().StopAllCoroutines();
       _human.GetComponent<Wander>().enabled = false;
       _human.GetComponent<SayRandomThings>().enabled = false;
+
+      // stop both
+      _devil.GetComponent<Rigidbody2D>().velocity = new Vector2();
+      _human.GetComponent<Rigidbody2D>().velocity = new Vector2();
 
       // start listening procedure
       StartCoroutine(SayDevil());
