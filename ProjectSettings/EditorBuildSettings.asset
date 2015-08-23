@@ -6,8 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MoveTutorial.unity
+    path: Assets/Scenes/Move Tutorial.unity
   - enabled: 1
-    path: Assets/Scenes/GoalsTutorial.unity
+    path: Assets/Scenes/Goals Tutorial.unity
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Dangerous Path.unity
+  - enabled: 1
+    path: Assets/Scenes/Cooking Party.unity
