@@ -18,6 +18,7 @@ GameObject:
   - 114: {fileID: 11450116}
   - 114: {fileID: 11459974}
   - 114: {fileID: 11418036}
+  - 114: {fileID: 11458562}
   m_Layer: 9
   m_Name: Skeleton
   m_TagString: Untagged
@@ -135,6 +136,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48a74aff241d8044bb6e80b167b3efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11458562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226cecd6cc7cfa04ca05a46c930160f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpSound: {fileID: 8300000, guid: ca5a9175b7e925a409332275460cf18b, type: 3}
+  LandSound: {fileID: 8300000, guid: cb948ad2760030a4796dfccc834c0f77, type: 3}
+  StepSound: {fileID: 8300000, guid: 25922bf8c77163a4bab511fa152eb46b, type: 3}
 --- !u!114 &11459974
 MonoBehaviour:
   m_ObjectHideFlags: 1
