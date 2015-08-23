@@ -27,7 +27,7 @@ public class Skull : MonoBehaviour {
 
       // if human, make pain
       if (sinner) {
-        sinner.MentalPain += 0.2f * _levelManager.PainMultiplier;
+        sinner.MentalPain += InflictedPain * _levelManager.PainMultiplier;
       }
     }
 
@@ -47,6 +47,11 @@ public class Skull : MonoBehaviour {
   ///   Hurt circle radius.
   /// </summary>
   public float HurtRadius = 32f;
+
+  /// <summary>
+  ///   Pain scale.
+  /// </summary>
+  public float InflictedPain = 0.2f;
 
   /// <summary>
   ///   The level manager.

@@ -3,7 +3,7 @@
 /// <summary>
 ///   Scales the sprite based on velocity.
 /// </summary>
-[RequireComponent(typeof (Rigidbody2D)), RequireComponent(typeof (SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(SpriteRenderer))]
 public class MovementScaler : MonoBehaviour {
 
   public void Awake() {
