@@ -9,8 +9,9 @@ using UnityEngine.UI;
 public class HumanInfo : MonoBehaviour {
 
   public void Awake() {
-    // get component
+    // get components
     _sinner = GetComponent<Sinner>();
+    _pickable = GetComponent<Pickable>();
   }
 
   public void Start() {
@@ -90,10 +91,16 @@ public class HumanInfo : MonoBehaviour {
                                                               physicalPainString);
 
     // show / hide
-    _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered; // && !GetComponent<Pickable>().Picked;
+    _info.GetComponentInChildren<Text>().enabled = _sinner.SinsDiscovered;
+
+    // picked offset
+    if (_pickable.Picked)
+      _info.transform.localPosition = Offset + new Vector2(0, -20f);
+    else
+      _info.transform.localPosition = Offset;
 
     // wait
-    yield return new WaitForSeconds(.2f);
+    yield return new WaitForSeconds(.1f);
 
     // repeat
     StartCoroutine(Check());
@@ -113,6 +120,11 @@ public class HumanInfo : MonoBehaviour {
   ///   Spawned human info UI.
   /// </summary>
   private GameObject _info;
+
+  /// <summary>
+  ///   Da pickable component.
+  /// </summary>
+  private Pickable _pickable;
 
   /// <summary>
   ///   Sinner component.
