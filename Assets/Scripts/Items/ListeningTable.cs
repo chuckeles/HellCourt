@@ -67,7 +67,7 @@ public class ListeningTable : MonoBehaviour {
   /// </summary>
   private IEnumerator GainControl() {
     // you shall pay
-    _dialogManager.Say("You will pay for your sins.", new Vector2(0, 20f), 4f, _devil);
+    _dialogManager.SayPitch("You will pay for your sins.", new Vector2(0, 20f), .7f, 4f, _devil);
 
     // wait
     yield return new WaitForSeconds(.5f);
@@ -128,7 +128,7 @@ public class ListeningTable : MonoBehaviour {
     yield return new WaitForSeconds(1f);
 
     // say a thing
-    _dialogManager.Say("Why are you here?", new Vector2(0, 20f), 2f, _devil);
+    _dialogManager.SayPitch("Why are you here?", new Vector2(0, 20f), .7f, 2f, _devil);
 
     // wait
     yield return new WaitForSeconds(2.2f);

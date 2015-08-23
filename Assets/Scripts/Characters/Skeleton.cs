@@ -29,7 +29,7 @@ public class Skeleton : MonoBehaviour {
       // say random thing
       GameObject.Find("DialogManager")
                 .GetComponent<DialogManager>()
-                .Say(DropSentences[Random.Range(0, DropSentences.Length)], new Vector2(0, 20f), 2f, gameObject);
+                .SayPitch(DropSentences[Random.Range(0, DropSentences.Length)], new Vector2(0, 20f), .8f, 2f, gameObject);
     }
   }
 
@@ -72,7 +72,7 @@ public class Skeleton : MonoBehaviour {
       // say random thing
       GameObject.Find("DialogManager")
                 .GetComponent<DialogManager>()
-                .Say(PickSentences[Random.Range(0, PickSentences.Length)], new Vector2(0, 30f), 2f, gameObject);
+                .SayPitch(PickSentences[Random.Range(0, PickSentences.Length)], new Vector2(0, 30f), .8f, 2f, gameObject);
 
     // repeat
     StartCoroutine(Pick());

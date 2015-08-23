@@ -29,7 +29,7 @@ public class PotStep : MonoBehaviour {
       human.transform.position = Pot.transform.position + HumanPosition;
 
       // say something
-      _dialogManager.Say(DevilSayings[Random.Range(0, DevilSayings.Length)], new Vector2(0, 20f), 2f, _devil);
+      _dialogManager.SayPitch(DevilSayings[Random.Range(0, DevilSayings.Length)], new Vector2(0, 20f), .7f, 2f, _devil);
     }
   }
 

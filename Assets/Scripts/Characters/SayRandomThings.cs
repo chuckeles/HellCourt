@@ -35,17 +35,19 @@ public class SayRandomThings : MonoBehaviour {
     if (enabled) {
       if (pendingPhysical > 0f) {
         // getting physically hurt
-        _manager.Say(PhysicalOuchSentences[Random.Range(0, PhysicalOuchSentences.Length)],
-                     new Vector2(0, 20f),
-                     2f,
-                     gameObject);
+        _manager.SayPitch(PhysicalOuchSentences[Random.Range(0, PhysicalOuchSentences.Length)],
+                          new Vector2(0, 20f),
+                          1.2f,
+                          2f,
+                          gameObject);
       }
       else if (pendingMental > 0f) {
         // getting mentally hurt
-        _manager.Say(MentalOuchSentences[Random.Range(0, MentalOuchSentences.Length)],
-                     new Vector2(0, 20f),
-                     2f,
-                     gameObject);
+        _manager.SayPitch(MentalOuchSentences[Random.Range(0, MentalOuchSentences.Length)],
+                          new Vector2(0, 20f),
+                          1.2f,
+                          2f,
+                          gameObject);
       }
 
       else if (transform.localRotation.eulerAngles.z > 0) {
@@ -56,8 +58,16 @@ public class SayRandomThings : MonoBehaviour {
                      gameObject);
       }
       else if (_saidHello) {
+        // pitch
+        var pitch = 1f;
+
+        if (_sinner.MentalPain > _sinner.RequiredMentalPain)
+          pitch = 1.3f;
+        else if (_sinner.PhysicalPain > _sinner.RequiredPhysicalPain)
+          pitch = 0.9f;
+
         // say random thing
-        _manager.Say(Sentences[Random.Range(0, Sentences.Length)], new Vector2(0, 20f), 2f, gameObject);
+        _manager.SayPitch(Sentences[Random.Range(0, Sentences.Length)], new Vector2(0, 20f), pitch, 2f, gameObject);
       }
       else {
         // say hello

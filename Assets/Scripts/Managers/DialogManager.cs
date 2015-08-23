@@ -24,10 +24,30 @@ public class DialogManager : MonoBehaviour {
 
   }
 
+  public GameObject SaySilent(string sentence, Vector2 position, float time = 2f, GameObject target = null) {
+    // say
+    var say = Say(sentence, position, time, target);
+
+    // mute
+    say.GetComponent<SentenceSounds>().enabled = false;
+
+    return say;
+  }
+
+  public GameObject SayPitch(string sentence, Vector2 position, float pitch, float time = 2f, GameObject target = null) {
+    // say
+    var say = Say(sentence, position, time, target);
+
+    // set pitch
+    say.GetComponent<SentenceSounds>().Pitch = pitch;
+
+    return say;
+  }
+
   /// <summary>
   ///   Say something.
   /// </summary>
-  public void Say(string sentence, Vector2 position, float time = 2f, GameObject target = null) {
+  public GameObject Say(string sentence, Vector2 position, float time = 2f, GameObject target = null) {
     // spawn a new said sentence
     var saidSentence = Instantiate(SaidSentencePrefab);
 
@@ -45,13 +65,14 @@ public class DialogManager : MonoBehaviour {
       saidSentence.transform.SetParent(transform, false);
       saidSentence.transform.position = position;
     }
-
-
+    
     // add to the list
     SayInfos.Add(new SayInfo {
       Object = saidSentence,
       Timer = time
     });
+
+    return saidSentence;
   }
 
   public void Update() {

@@ -61,9 +61,11 @@ public class Statue : MonoBehaviour {
       var goal = _levelManager.Goals[0];
 
       // say it
-      _dialogManager.Say("Current goal:\n" + goal.Text,
-                         transform.position + new Vector3(0, 40f),
-                         4f);
+      _dialogManager.SayPitch("Current goal:\n" + goal.Text,
+                              new Vector3(0, 40f),
+                              .5f,
+                              4f,
+                              gameObject);
 
       // wait
       yield return new WaitForSeconds(4f);
@@ -111,9 +113,11 @@ public class Statue : MonoBehaviour {
           ((physicalRequired > 0.01f && sinner.PhysicalPain > physicalRequired &&
             sinner.PhysicalPain < physicalRequired * 2f) || (physicalRequired < 0.01f && sinner.PhysicalPain < 20f))) {
         // human is good
-        _dialogManager.Say(GoodHumanSentences[Random.Range(0, WinSentences.Length)],
-                           transform.position + new Vector3(0, 40f),
-                           4f);
+        _dialogManager.SayPitch(GoodHumanSentences[Random.Range(0, GoodHumanSentences.Length)],
+                                new Vector3(0, 40f),
+                                .5f,
+                                4f,
+                                gameObject);
 
         // accept him
         AcceptHuman(human);
@@ -143,15 +147,19 @@ public class Statue : MonoBehaviour {
         // human is bad
         if (sinner.MentalPain < mentalRequired || sinner.PhysicalPain < physicalRequired) {
           // not enough pain
-          _dialogManager.Say(BadHumanNotEnoughSentences[Random.Range(0, WinSentences.Length)],
-                             transform.position + new Vector3(0, 40f),
-                             4f);
+          _dialogManager.SayPitch(BadHumanNotEnoughSentences[Random.Range(0, BadHumanNotEnoughSentences.Length)],
+                                  new Vector3(0, 40f),
+                                  .5f,
+                                  4f,
+                                  gameObject);
         }
         else {
           // too much pain
-          _dialogManager.Say(BadHumanTooMuchSentences[Random.Range(0, WinSentences.Length)],
-                             transform.position + new Vector3(0, 40f),
-                             4f);
+          _dialogManager.SayPitch(BadHumanTooMuchSentences[Random.Range(0, BadHumanTooMuchSentences.Length)],
+                                  new Vector3(0, 40f),
+                                  .5f,
+                                  4f,
+                                  gameObject);
         }
       }
 
@@ -165,9 +173,11 @@ public class Statue : MonoBehaviour {
   /// </summary>
   private IEnumerator NextLevel() {
     // say a thing
-    _dialogManager.Say(WinSentences[Random.Range(0, WinSentences.Length)],
-                       transform.position + new Vector3(0, 40f),
-                       3.8f);
+    _dialogManager.SayPitch(WinSentences[Random.Range(0, WinSentences.Length)],
+                            new Vector3(0, 40f),
+                            .5f,
+                            3.8f,
+                            gameObject);
 
     // wait
     yield return new WaitForSeconds(4f);

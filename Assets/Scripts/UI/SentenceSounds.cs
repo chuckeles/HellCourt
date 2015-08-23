@@ -15,10 +15,11 @@ public class SentenceSounds : MonoBehaviour {
     // spawn a sound
     var sound = AudioUtil.PlayAtPositionWithPitch(transform.parent.position,
                                                   SaySounds[Random.Range(0, SaySounds.Length)],
-                                                  Pitch);
+                                                  Pitch,
+                                                  0.1f);
 
     // lower volume
-    sound.volume *= 0.8f;
+    sound.volume *= 0.5f;
 
     // wait
     yield return new WaitForSeconds(Random.Range(sound.clip.length, sound.clip.length * 1.5f));
