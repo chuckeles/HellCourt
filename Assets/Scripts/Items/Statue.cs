@@ -13,7 +13,7 @@ public class Statue : MonoBehaviour {
     _devil = GameObject.FindWithTag("Player");
 
     // listen
-    _devil.GetComponent<HumanPicking>().OnDropped += HumanDropped;
+    _devil.GetComponent<Picking>().OnDropped += HumanDropped;
   }
 
   public void Update() {

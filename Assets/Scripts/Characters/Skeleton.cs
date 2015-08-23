@@ -11,7 +11,7 @@ public class Skeleton : MonoBehaviour {
     _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
     // spy on human dropping
-    GameObject.FindWithTag("Player").GetComponent<HumanPicking>().OnDropped += HumanDropped;
+    GameObject.FindWithTag("Player").GetComponent<Picking>().OnDropped += HumanDropped;
 
     // start hurting
     StartCoroutine(Hurt());

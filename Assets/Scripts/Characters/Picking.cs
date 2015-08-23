@@ -3,7 +3,7 @@
 /// <summary>
 ///   Allows the devil to pick up humans.
 /// </summary>
-public class HumanPicking : MonoBehaviour {
+public class Picking : MonoBehaviour {
 
   /// <summary>
   ///   Delegate for OnDropped event.
