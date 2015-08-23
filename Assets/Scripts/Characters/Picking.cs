@@ -25,7 +25,7 @@ public class Picking : MonoBehaviour {
       DropHuman();
     else {
       // find closest human
-      var humans = GameObject.FindGameObjectsWithTag("Human");
+      var humans = GameObject.FindObjectsOfType<Pickable>();
       GameObject closestHuman = null;
       var closestDistance = float.MaxValue;
 
@@ -36,7 +36,7 @@ public class Picking : MonoBehaviour {
         // compare and update
         if (d < closestDistance) {
           closestDistance = d;
-          closestHuman = human;
+          closestHuman = human.gameObject;
         }
       }
 
