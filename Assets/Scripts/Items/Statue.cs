@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -93,14 +94,36 @@ public class Statue : MonoBehaviour {
       var mentalRequired = sinner.RequiredMentalPain;
       var physicalRequired = sinner.RequiredPhysicalPain;
 
-      if (((mentalRequired > 0.01f && sinner.MentalPain > mentalRequired && sinner.MentalPain < mentalRequired * 2f) || (mentalRequired < 0.01f && sinner.MentalPain < 20f)) &&
-          ((physicalRequired > 0.01f && sinner.PhysicalPain > physicalRequired && sinner.PhysicalPain < physicalRequired * 2f) || (physicalRequired < 0.01f && sinner.PhysicalPain < 20f))) {
+      if (((mentalRequired > 0.01f && sinner.MentalPain > mentalRequired && sinner.MentalPain < mentalRequired * 2f) ||
+           (mentalRequired < 0.01f && sinner.MentalPain < 20f)) &&
+          ((physicalRequired > 0.01f && sinner.PhysicalPain > physicalRequired &&
+            sinner.PhysicalPain < physicalRequired * 2f) || (physicalRequired < 0.01f && sinner.PhysicalPain < 20f))) {
         // human is good
         _dialogManager.Say(GoodHumanSentences[Random.Range(0, WinSentences.Length)],
                            transform.position + new Vector3(0, 40f),
                            4f);
 
+        // accept him
         AcceptHuman(human);
+
+        // update level score
+        if (mentalRequired < 0.01 && sinner.MentalPain > 20f) {
+          // mental not required
+          _score *= Mathf.Lerp(1f, 0.9f, (sinner.MentalPain - 20f) / 80f);
+        }
+        else {
+          // mental required
+          _score *= Mathf.Lerp(1f, 0f, (sinner.MentalPain / mentalRequired) / 20f);
+        }
+
+        if (physicalRequired < 0.01 && sinner.PhysicalPain > 20f) {
+          // physical not required
+          _score *= Mathf.Lerp(1f, 0.9f, (sinner.PhysicalPain - 20f) / 80f);
+        }
+        else {
+          // physical required
+          _score *= Mathf.Lerp(1f, 0f, (sinner.PhysicalPain / physicalRequired) / 20f);
+        }
       }
       else {
         // human is bad
@@ -135,8 +158,41 @@ public class Statue : MonoBehaviour {
     // wait
     yield return new WaitForSeconds(4f);
 
+    // save level
+    SaveLevel();
+
     // load next level
     Application.LoadLevel(Application.loadedLevel + 1);
+  }
+
+  /// <summary>
+  ///   Save stuff to playerprefs.
+  /// </summary>
+  private void SaveLevel() {
+    // get saved levels
+    var levels = new List<string>(PlayerPrefsX.GetStringArray("FinishedLevels"));
+
+    // add this one if not there yet
+    if (!levels.Contains(Application.loadedLevelName))
+      levels.Add(Application.loadedLevelName);
+
+    // set saved levels
+    PlayerPrefsX.SetStringArray("FinishedLevels", levels.ToArray());
+
+    // get saved information
+    var savedTime = PlayerPrefs.GetFloat(Application.loadedLevelName + "Time", float.MaxValue);
+    var savedScore = PlayerPrefs.GetFloat(Application.loadedLevelName + "Score", 0);
+
+    // check current time
+    var currentTime = Time.timeSinceLevelLoad;
+    if (currentTime < savedTime)
+      // save
+      PlayerPrefs.SetFloat(Application.loadedLevelName + "Time", currentTime);
+
+    // check current score
+    if (_score > savedScore)
+      // save
+      PlayerPrefs.SetFloat(Application.loadedLevelName + "Score", _score);
   }
 
   /// <summary>
@@ -193,5 +249,10 @@ public class Statue : MonoBehaviour {
   ///   The level manager.
   /// </summary>
   private LevelManager _levelManager;
+
+  /// <summary>
+  ///   Current level's score.
+  /// </summary>
+  private float _score = 1f;
 
 }
