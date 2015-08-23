@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 4af0684cb745dc9409f8c882cc191943
-timeCreated: 1440331145
+timeCreated: 1440367789
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: HumanStandingCrazy_0
     21300002: HumanStandingCrazy_1
+    21300004: HumanStandingCrazy_2
+    21300006: HumanStandingCrazy_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,7 +61,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: HumanStandingCrazy_1
       rect:
@@ -69,7 +71,27 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HumanStandingCrazy_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HumanStandingCrazy_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: Characters
   userData: 
