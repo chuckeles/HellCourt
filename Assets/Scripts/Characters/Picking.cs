@@ -166,6 +166,11 @@ public class Picking : MonoBehaviour {
     // update animator
     if (_animator)
       _animator.SetBool("Carrying", true);
+
+    // play sound
+    var sound = GetComponent<CharacterSounds>();
+    if (sound)
+      sound.PlayPick();
   }
 
   /// <summary>

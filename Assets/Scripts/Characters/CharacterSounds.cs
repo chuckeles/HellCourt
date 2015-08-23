@@ -3,7 +3,7 @@
 /// <summary>
 ///   Plays various movement sounds.
 /// </summary>
-public class MovementSounds : MonoBehaviour {
+public class CharacterSounds : MonoBehaviour {
 
   public void OnCollisionEnter2D(Collision2D collision) {
     // check the collision
@@ -27,10 +27,17 @@ public class MovementSounds : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Plays the pick sound.
+  /// </summary>
+  public void PlayPick() {
+    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, PickSound).volume *= 0.8f;
+  }
+
+  /// <summary>
   ///   Plays the step sound.
   /// </summary>
   public void PlayStep() {
-    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, StepSound);
+    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, StepSound).volume *= 0.5f;
   }
 
   /// <summary>
@@ -42,6 +49,11 @@ public class MovementSounds : MonoBehaviour {
   ///   Land audio clip.
   /// </summary>
   public AudioClip LandSound;
+
+  /// <summary>
+  ///   Pick audio clip.
+  /// </summary>
+  public AudioClip PickSound;
 
   /// <summary>
   ///   Step audio clip.

@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour {
       newVelocity.y = JumpStrength;
 
       // play sound
-      var sounds = GetComponent<MovementSounds>();
+      var sounds = GetComponent<CharacterSounds>();
       if (sounds)
         sounds.PlayJump();
     }

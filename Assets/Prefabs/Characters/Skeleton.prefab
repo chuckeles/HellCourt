@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpSound: {fileID: 8300000, guid: ca5a9175b7e925a409332275460cf18b, type: 3}
   LandSound: {fileID: 8300000, guid: cb948ad2760030a4796dfccc834c0f77, type: 3}
+  PickSound: {fileID: 8300000, guid: 2891bdbb0116957438001db2cb05ab47, type: 3}
   StepSound: {fileID: 8300000, guid: 25922bf8c77163a4bab511fa152eb46b, type: 3}
 --- !u!114 &11459974
 MonoBehaviour:
@@ -325,6 +326,10 @@ Prefab:
       propertyPath: DropSentences.Array.data[17]
       value: This will be fun.
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: PickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2891bdbb0116957438001db2cb05ab47, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197162}
