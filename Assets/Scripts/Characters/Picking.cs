@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 ///   Allows the devil to pick up humans.
@@ -13,67 +14,83 @@ public class Picking : MonoBehaviour {
   public void Awake() {
     // get components
     _animator = GetComponent<Animator>();
+    _body = GetComponent<Rigidbody2D>();
+  }
+
+  /// <summary>
+  ///   Performs checks and picks / drops human.
+  /// </summary>
+  public void CheckPick() {
+    if (_picked)
+      DropHuman();
+    else {
+      // find closest human
+      var humans = GameObject.FindGameObjectsWithTag("Human");
+      GameObject closestHuman = null;
+      var closestDistance = float.MaxValue;
+
+      foreach (var human in humans) {
+        // get distance
+        var d = (human.transform.position - transform.position).sqrMagnitude;
+
+        // compare and update
+        if (d < closestDistance) {
+          closestDistance = d;
+          closestHuman = human;
+        }
+      }
+
+      // check distance
+      if (closestDistance < PickRange * PickRange)
+        PickHuman(closestHuman);
+    }
   }
 
   public void Update() {
     // check input
-    if (Input.GetButtonDown("Use")) {
-      if (_pickedHuman)
-        DropHuman();
-      else {
-        // find closest human
-        var humans = GameObject.FindGameObjectsWithTag("Human");
-        GameObject closestHuman = null;
-        var closestDistance = float.MaxValue;
-
-        foreach (var human in humans) {
-          // get distance
-          var d = (human.transform.position - transform.position).sqrMagnitude;
-
-          // compare and update
-          if (d < closestDistance) {
-            closestDistance = d;
-            closestHuman = human;
-          }
-        }
-
-        // check distance
-        if (closestDistance < PickRange * PickRange)
-          PickHuman(closestHuman);
-      }
-    }
+    if (Input.GetButtonDown("Use") && ReadInput)
+      CheckPick();
   }
 
   /// <summary>
   ///   Drops currently picked human.
   /// </summary>
   private void DropHuman() {
-    if (!_pickedHuman)
+    if (!_picked)
       return;
 
-    // reset position and rotation
-    _pickedHuman.transform.position = (Vector2) transform.position + CarryOffset;
-
     // re-parent
-    _pickedHuman.transform.parent = _originalHumanParent;
+    _picked.transform.parent = _originalParent;
 
+    // reset position and rotation
+    _picked.transform.position = (Vector2) transform.position +
+                                 new Vector2(CarryOffset.x * transform.localScale.x, CarryOffset.y);
 
     // reset picked
-    _pickedHuman.GetComponent<Pickable>().Picked = false;
+    _picked.GetComponent<Pickable>().Picked = false;
 
     // re-enable components
-    _pickedHuman.GetComponent<Rigidbody2D>().isKinematic = false;
-    _pickedHuman.GetComponent<MovementScaler>().enabled = true;
-    _pickedHuman.GetComponent<Wander>().enabled = true;
+    var body = _picked.GetComponent<Rigidbody2D>();
+    var movementScaler = _picked.GetComponent<MovementScaler>();
+    var wander = _picked.GetComponent<Wander>();
 
-    _pickedHuman.GetComponent<Rigidbody2D>().WakeUp();
+    if (body) {
+      body.isKinematic = false;
+      body.velocity = _body.velocity * 1.5f;
+      body.WakeUp();
+    }
+    if (movementScaler)
+      movementScaler.enabled = true;
+    if (wander)
+      StartCoroutine(EnableBehaviorAfterTime(wander, 2f));
+
 
     // fire event
-    if (OnDropped != null)
-      OnDropped(_pickedHuman);
+    if (OnDropped != null && _picked.tag == "Human")
+      OnDropped(_picked);
 
     // reset variable
-    _pickedHuman = null;
+    _picked = null;
 
     // update animator
     if (_animator)
@@ -81,28 +98,47 @@ public class Picking : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Enables behavior after some time.
+  /// </summary>
+  private IEnumerator EnableBehaviorAfterTime(MonoBehaviour b, float time) {
+    // wait
+    yield return new WaitForSeconds(time);
+
+    // enable if not picked
+    if (!b.GetComponent<Pickable>().Picked)
+      b.enabled = true;
+  }
+
+  /// <summary>
   ///   Grabs the human.
   /// </summary>
   private void PickHuman(GameObject human) {
-    if (_pickedHuman || !human)
+    if (_picked || !human)
       return;
 
     // set picked human
-    _pickedHuman = human;
+    _picked = human;
 
     // disable human's components
-    human.GetComponent<Wander>().enabled = false;
-    human.GetComponent<MovementScaler>().enabled = false;
-    human.GetComponent<Rigidbody2D>().isKinematic = true;
+    var wander = human.GetComponent<Wander>();
+    var movementScaler = human.GetComponent<MovementScaler>();
+    var body = human.GetComponent<Rigidbody2D>();
+
+    if (wander)
+      wander.enabled = false;
+    if (movementScaler)
+      movementScaler.enabled = false;
+    if (body)
+      body.isKinematic = true;
 
     // set picked
     human.GetComponent<Pickable>().Picked = true;
 
-    // parent to us
-    _originalHumanParent = human.transform.parent;
+    // parent to me
+    _originalParent = human.transform.parent;
     human.transform.parent = transform;
 
-    // position above us
+    // position above me
     human.transform.localPosition = CarryOffset;
 
     // update animator
@@ -121,19 +157,29 @@ public class Picking : MonoBehaviour {
   public float PickRange = 32f;
 
   /// <summary>
+  ///   Whether to read player input.
+  /// </summary>
+  public bool ReadInput;
+
+  /// <summary>
   ///   The animator component.
   /// </summary>
   private Animator _animator;
 
   /// <summary>
+  ///   The body component.
+  /// </summary>
+  private Rigidbody2D _body;
+
+  /// <summary>
   ///   Original parent of human.
   /// </summary>
-  private Transform _originalHumanParent;
+  private Transform _originalParent;
 
   /// <summary>
   ///   Currently picked human.
   /// </summary>
-  private GameObject _pickedHuman;
+  private GameObject _picked;
 
   /// <summary>
   ///   Fired when a human is placed.

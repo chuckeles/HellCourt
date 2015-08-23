@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarryOffset: {x: 8, y: 21}
   PickRange: 32
+  ReadInput: 1
 --- !u!114 &11422770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +221,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9e874bda4ba7576429bc9eaccda6e1e5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ReadInput
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154186}

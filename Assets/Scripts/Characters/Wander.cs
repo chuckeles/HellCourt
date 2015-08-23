@@ -34,7 +34,7 @@ public class Wander : MonoBehaviour {
       else
         _remaining -= Speed * Mathf.Sign(_remaining) * Time.fixedDeltaTime;
     }
-    else
+    else if (enabled)
       _body.velocity = new Vector2(0, _body.velocity.y);
   }
 
