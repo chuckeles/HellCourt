@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21211008}
   - 60: {fileID: 6012170}
   - 114: {fileID: 11479330}
+  - 95: {fileID: 9571576}
   m_Layer: 8
   m_Name: Pot
   m_TagString: Untagged
@@ -55,6 +56,23 @@ PolygonCollider2D:
       - {x: -13.7249146, y: 15.2656555}
       - {x: -13.7695465, y: 20.0808868}
       - {x: -16.0617523, y: 20.0855408}
+--- !u!95 &9571576
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfbb42cff32b6b04d9452f530b083f90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11479330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +123,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f3153d8591e629b499e97f4f159a176c, type: 2}
@@ -144,6 +166,14 @@ Prefab:
       propertyPath: HumanLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 61883c51b154d7d42b0c249d066c6a06, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bfbb42cff32b6b04d9452f530b083f90, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190616}
