@@ -85,7 +85,7 @@ public class Skeleton : MonoBehaviour {
     "Ou hello there!", "Bu bu bu bu!", "Don't be scared.", "What are you looking at?", "Yes, I'm alive.", "What?",
     "I'm made out of bones...", "Been here for so long...", "Ah! We have a company!", "Welcome.", "Don't waste my time.",
     "I'm in no hurry.", "I see.", "Can I play with them?", "What is this?", "Really?",
-    "I am really old.", "This will be fun", "Let's get to work."
+    "I am really old.", "This will be fun.", "Let's get to work."
   };
 
   /// <summary>

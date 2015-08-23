@@ -1,81 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &197162
+--- !u!1 &107804
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482452}
-  - 212: {fileID: 21283974}
-  - 58: {fileID: 5820208}
-  - 50: {fileID: 5028758}
-  - 114: {fileID: 11411118}
-  - 114: {fileID: 11484746}
-  - 95: {fileID: 9506808}
-  - 114: {fileID: 11401876}
-  - 114: {fileID: 11450116}
-  - 114: {fileID: 11459974}
-  - 114: {fileID: 11418036}
+  - 4: {fileID: 410280}
+  - 212: {fileID: 21237652}
+  - 95: {fileID: 9579612}
+  - 58: {fileID: 5889856}
+  - 50: {fileID: 5055330}
+  - 114: {fileID: 11438686}
+  - 114: {fileID: 11433076}
+  - 114: {fileID: 11418286}
   m_Layer: 9
-  m_Name: Skeleton
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482452
+--- !u!4 &410280
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5028758
+--- !u!50 &5055330
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5820208
+--- !u!58 &5889856
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 5}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!95 &9506808
+--- !u!95 &9579612
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 097236ac07381644f81628c3cbcb013b, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0cb8d32788598047b2f9ee0a4fab71e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -83,95 +80,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11401876
+--- !u!114 &11418286
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea0fe3a0829862643ad3d0fa1b336ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SolidLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!114 &11411118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8d101e3e8743e44bc7976b3e06a5a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxWanderDistance: 32
-  Speed: 40
---- !u!114 &11418036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1fa08637578b9a40892b9ff7bcaf970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarryOffset: {x: 0, y: 20}
-  PickRange: 32
-  ReadInput: 0
---- !u!114 &11450116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a48a74aff241d8044bb6e80b167b3efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11459974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c6fb7f9da0f8d34399abf73ea4fbea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Picked: 0
---- !u!114 &11484746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7f40a0d0beafab449bb62c33ff1e47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DropSentences:
-  - Ou hello there!
+  - I'm almost invisible.
   - Bu bu bu bu!
   - Don't be scared.
   - What are you looking at?
   - Yes, I'm alive.
-  - What?
-  - I'm made out of bones...
+  - Huhuhu!
+  - Can you seem through me?
   - Been here for so long...
-  - Ah! We have a company!
+  - I can fly!
   - Welcome.
   - Don't waste my time.
   - I'm in no hurry.
-  - I see.
+  - Do you see me?
   - Can I play with them?
   - What is this?
   - Really?
@@ -183,25 +116,37 @@ MonoBehaviour:
     m_Bits: 512
   HurtRadius: 64
   PickSentences:
-  - Get over here.
-  - Hehehe.
-  - Hahahaha.
-  - Bu!
-  - I got you.
-  - Come here!
-  - Muhaha.
-  - Let's play!
-  - Let's have some fun.
-  - Scared enough?
-  - I'm strong...
-  - How much do you weight?
-  - Ufff...
---- !u!212 &21283974
+  - No picking for me...
+--- !u!114 &11433076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48a74aff241d8044bb6e80b167b3efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11438686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8d101e3e8743e44bc7976b3e06a5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWanderDistance: 128
+  Speed: 10
+--- !u!212 &21237652
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197162}
+  m_GameObject: {fileID: 107804}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -220,8 +165,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456420615
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 01612bc9437df1146bf477aab2d40d6d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 01150f962003d9843b8ca1b9cc274fd1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: .588235319}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -229,6 +174,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: PickSentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -238,73 +187,76 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: PickSentences.Array.data[1]
+      value: Hehehe.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: MaxWanderDistance
-      value: 32
+      propertyPath: PickSentences.Array.data[2]
+      value: Hahahaha.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Untagged
+      propertyPath: PickSentences.Array.data[3]
+      value: Bu!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: HumanInfoPrefab
-      value: 
-      objectReference: {fileID: 190542, guid: 2cbd03a09a064f845913e73882189701, type: 2}
-    - target: {fileID: 0}
-      propertyPath: Offset.y
-      value: 0
+      propertyPath: PickSentences.Array.data[4]
+      value: I got you.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: SinsDiscovered
-      value: 0
+      propertyPath: PickSentences.Array.data[5]
+      value: Come here!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 01612bc9437df1146bf477aab2d40d6d,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: Speed
-      value: 40
+      propertyPath: PickSentences.Array.data[6]
+      value: Muhaha.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: HumanLayer.m_Bits
-      value: 512
+      propertyPath: PickSentences.Array.data[7]
+      value: Let's play!
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: HurtRadius
-      value: 64
+      propertyPath: PickSentences.Array.data[8]
+      value: Let's have some fun.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Radius
-      value: 5
+      propertyPath: PickSentences.Array.data[9]
+      value: Scared enough?
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Offset.y
-      value: 5
+      propertyPath: PickSentences.Array.data[10]
+      value: I'm strong...
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_Interpolate
-      value: 1
+      propertyPath: PickSentences.Array.data[11]
+      value: How much do you weight?
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: SolidLayerMask.m_Bits
-      value: 256
+      propertyPath: PickSentences.Array.data[12]
+      value: Ufff...
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_IsKinematic
-      value: 0
+      propertyPath: PickSentences.Array.data[0]
+      value: No picking for me...
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: m_CollisionDetection
-      value: 1
+      propertyPath: DropSentences.Array.data[0]
+      value: I'm almost invisible.
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: CarryOffset.y
-      value: 20
+      propertyPath: DropSentences.Array.data[5]
+      value: Huhuhu!
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DropSentences.Array.data[6]
+      value: Can you seem through me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DropSentences.Array.data[8]
+      value: I can fly!
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DropSentences.Array.data[12]
+      value: Do you see me?
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: DropSentences.Array.data[17]
@@ -312,5 +264,5 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 197162}
+  m_RootGameObject: {fileID: 107804}
   m_IsPrefabParent: 1
