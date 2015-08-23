@@ -33,7 +33,11 @@ public class Picking : MonoBehaviour {
       var closestDistance = float.MaxValue;
 
       foreach (var human in humans) {
+        // checks
         if (human.gameObject == gameObject)
+          continue;
+
+        if (human.Picked)
           continue;
 
         // get distance

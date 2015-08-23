@@ -30,14 +30,13 @@ public class Acceptor : MonoBehaviour {
     if (_levelManager.Goals.Count > 0) {
       var goal = _levelManager.Goals[0];
 
-      if (goal.Type == LevelManager.Goal.GoalType.ReturnHumans) {
-        --goal.Number;
+      --goal.Number;
 
-        if (goal.Number <= 0) {
-          // the goal is done
-          _levelManager.Goals.RemoveAt(0);
-        }
+      if (goal.Number <= 0) {
+        // the goal is done
+        _levelManager.Goals.RemoveAt(0);
       }
+
       else
         _levelManager.Goals[0] = goal;
     }

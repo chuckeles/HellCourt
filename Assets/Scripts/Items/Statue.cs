@@ -48,7 +48,7 @@ public class Statue : MonoBehaviour {
       var goal = _levelManager.Goals[0];
 
       // say it
-      _dialogManager.Say("Current goal:\n" + goal.Text,
+      _dialogManager.Say("Current goal:\n" + goal.Text + "\n(" + goal.Number + " remaining)",
                          transform.position + new Vector3(0, 40f),
                          4f);
 
