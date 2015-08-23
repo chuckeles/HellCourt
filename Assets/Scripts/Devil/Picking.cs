@@ -48,21 +48,19 @@ public class Picking : MonoBehaviour {
 
     // reset position and rotation
     _pickedHuman.transform.position = (Vector2) transform.position + CarryOffset;
-    _pickedHuman.transform.localRotation = Quaternion.identity;
 
     // re-parent
     _pickedHuman.transform.parent = _originalHumanParent;
 
-    // re-enable components
-    //_pickedHuman.GetComponent<Collider2D>().enabled = true;
-    _pickedHuman.AddComponent<Rigidbody2D>();
-    _pickedHuman.AddComponent<Wander>();
 
-    // set up rigidbody
-    var body = _pickedHuman.GetComponent<Rigidbody2D>();
-    body.constraints = RigidbodyConstraints2D.FreezeRotation;
-    body.interpolation = RigidbodyInterpolation2D.Interpolate;
-    body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+    // reset picked
+    _pickedHuman.GetComponent<Pickable>().Picked = false;
+
+    // re-enable components
+    _pickedHuman.GetComponent<Rigidbody2D>().isKinematic = false;
+    _pickedHuman.GetComponent<Wander>().enabled = true;
+
+    _pickedHuman.GetComponent<Rigidbody2D>().WakeUp();
 
     // fire event
     if (OnDropped != null)
@@ -83,9 +81,11 @@ public class Picking : MonoBehaviour {
     _pickedHuman = human;
 
     // disable human's components
-    //human.GetComponent<Collider2D>().enabled = false;
-    Destroy(human.GetComponent<Wander>());
-    Destroy(human.GetComponent<Rigidbody2D>());
+    human.GetComponent<Wander>().enabled = false;
+    human.GetComponent<Rigidbody2D>().isKinematic = true;
+
+    // set picked
+    human.GetComponent<Pickable>().Picked = true;
 
     // parent to us
     _originalHumanParent = human.transform.parent;
@@ -93,7 +93,6 @@ public class Picking : MonoBehaviour {
 
     // position above us
     human.transform.localPosition = CarryOffset;
-    human.transform.localRotation = Quaternion.Euler(0, 0, 90);
   }
 
   /// <summary>

@@ -11,18 +11,27 @@ public class AnimatorUpdater : MonoBehaviour {
     _animator = GetComponent<Animator>();
     _body = GetComponent<Rigidbody2D>();
     _collider = GetComponent<CircleCollider2D>();
+    _pickable = GetComponent<Pickable>();
   }
 
   public void Update() {
     // update velocity
     _animator.SetFloat("Velocity", Mathf.Abs(_body.velocity.x));
 
+    // update carried
+    var carried = false;
+    if (_pickable) {
+      carried = _pickable.Picked;
+      _animator.SetBool("Carried", carried);
+    }
+
     // update falling
-    _animator.SetBool("Falling",
-                      !Physics2D.OverlapCircle((Vector2) transform.position +
-                                               new Vector2(_collider.offset.x, _collider.offset.y - 4f),
-                                               _collider.radius,
-                                               SolidLayerMask));
+    if (!carried)
+      _animator.SetBool("Falling",
+                        !Physics2D.OverlapCircle((Vector2) transform.position +
+                                                 new Vector2(_collider.offset.x, _collider.offset.y - 4f),
+                                                 _collider.radius,
+                                                 SolidLayerMask));
   }
 
   /// <summary>
@@ -44,5 +53,10 @@ public class AnimatorUpdater : MonoBehaviour {
   ///   The collider component.
   /// </summary>
   private CircleCollider2D _collider;
+
+  /// <summary>
+  ///   The pick-able component.
+  /// </summary>
+  private Pickable _pickable;
 
 }

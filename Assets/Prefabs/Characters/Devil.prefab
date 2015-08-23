@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fa08637578b9a40892b9ff7bcaf970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarryOffset: {x: 13, y: 18}
+  CarryOffset: {x: 8, y: 18}
   PickRange: 32
 --- !u!114 &11422770
 MonoBehaviour:
@@ -206,7 +206,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: CarryOffset.x
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Radius
