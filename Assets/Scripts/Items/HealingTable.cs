@@ -56,7 +56,7 @@ public class HealingTable : MonoBehaviour {
 
   public void Update() {
     // cancel
-    if (Input.GetButton("Horizontal") || Input.GetButton("Jump"))
+    if (Input.GetButton("Horizontal") || Input.GetButton("Jump") || Input.GetButton("Use"))
       _canceled = true;
   }
 

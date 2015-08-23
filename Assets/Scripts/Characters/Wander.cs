@@ -67,7 +67,8 @@ public class Wander : MonoBehaviour {
 
       // start wandering
       _wandering = true;
-      _remaining += Random.Range(-MaxWanderDistance * mult, MaxWanderDistance * mult);
+      _remaining += Random.Range(MaxWanderDistance * 0.2f, MaxWanderDistance * mult) *
+                    (Random.Range(0, 10f) < 5f ? -1f : 1f);
     }
 
     // repeat
