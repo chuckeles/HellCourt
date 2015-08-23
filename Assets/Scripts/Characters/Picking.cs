@@ -99,8 +99,8 @@ public class Picking : MonoBehaviour {
       body.velocity = _body.velocity * 1.5f;
       body.WakeUp();
     }
-    if (movementScaler)
-      movementScaler.enabled = true;
+    //if (movementScaler)
+    //  movementScaler.enabled = true;
     if (wander)
       StartCoroutine(EnableBehaviorAfterTime(wander, 2f));
 
@@ -150,8 +150,8 @@ public class Picking : MonoBehaviour {
 
     if (wander)
       wander.enabled = false;
-    if (movementScaler)
-      movementScaler.enabled = false;
+    //if (movementScaler)
+    //  movementScaler.enabled = false;
     if (body)
       body.isKinematic = true;
     if (picking) {
