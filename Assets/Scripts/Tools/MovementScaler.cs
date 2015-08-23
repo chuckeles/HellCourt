@@ -9,9 +9,14 @@ public class MovementScaler : MonoBehaviour {
   public void Awake() {
     // get components
     _body = GetComponent<Rigidbody2D>();
+    _pickable = GetComponent<Pickable>();
   }
 
   public void LateUpdate() {
+    // check if picked
+    if (_pickable && _pickable.Picked)
+      return;
+    
     // get velocity x
     var vx = _body.velocity.x;
 
@@ -54,5 +59,10 @@ public class MovementScaler : MonoBehaviour {
   ///   Body component.
   /// </summary>
   private Rigidbody2D _body;
+
+  /// <summary>
+  /// Pickable component.
+  /// </summary>
+  private Pickable _pickable;
 
 }

@@ -89,7 +89,6 @@ public class Picking : MonoBehaviour {
     // re-enable components
     var picking = _picked.GetComponent<Picking>();
     var body = _picked.GetComponent<Rigidbody2D>();
-    var movementScaler = _picked.GetComponent<MovementScaler>();
     var wander = _picked.GetComponent<Wander>();
 
     if (picking)
@@ -99,8 +98,6 @@ public class Picking : MonoBehaviour {
       body.velocity = _body.velocity * 1.5f;
       body.WakeUp();
     }
-    //if (movementScaler)
-    //  movementScaler.enabled = true;
     if (wander)
       StartCoroutine(EnableBehaviorAfterTime(wander, 2f));
 
@@ -144,14 +141,11 @@ public class Picking : MonoBehaviour {
 
     // disable human's components
     var wander = human.GetComponent<Wander>();
-    var movementScaler = human.GetComponent<MovementScaler>();
     var body = human.GetComponent<Rigidbody2D>();
     var picking = human.GetComponent<Picking>();
 
     if (wander)
       wander.enabled = false;
-    //if (movementScaler)
-    //  movementScaler.enabled = false;
     if (body)
       body.isKinematic = true;
     if (picking) {
