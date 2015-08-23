@@ -13,7 +13,7 @@ public class PotStep : MonoBehaviour {
     _dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
     // subscribe
-    _devil.GetComponent<Picking>().OnDropped += HumanDropped;
+    _devil.GetComponent<HumanPicking>().OnDropped += HumanDropped;
   }
 
   /// <summary>

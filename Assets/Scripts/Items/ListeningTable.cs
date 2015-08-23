@@ -14,7 +14,7 @@ public class ListeningTable : MonoBehaviour {
     _dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
     // subscribe
-    _devil.GetComponent<Picking>().OnDropped += HumanDropped;
+    _devil.GetComponent<HumanPicking>().OnDropped += HumanDropped;
   }
 
   /// <summary>
@@ -28,7 +28,7 @@ public class ListeningTable : MonoBehaviour {
 
       // disable control
       _devil.GetComponent<Movement>().enabled = false;
-      _devil.GetComponent<Picking>().enabled = false;
+      _devil.GetComponent<HumanPicking>().enabled = false;
 
       // move human
       _human = human;
@@ -69,7 +69,7 @@ public class ListeningTable : MonoBehaviour {
 
     // re-enable player
     _devil.GetComponent<Movement>().enabled = true;
-    _devil.GetComponent<Picking>().enabled = true;
+    _devil.GetComponent<HumanPicking>().enabled = true;
 
     // re-enable human
     _human.GetComponent<Wander>().enabled = true;

@@ -13,7 +13,7 @@ public class Statue : MonoBehaviour {
     _devil = GameObject.FindWithTag("Player");
 
     // listen
-    _devil.GetComponent<Picking>().OnDropped += HumanDropped;
+    _devil.GetComponent<HumanPicking>().OnDropped += HumanDropped;
   }
 
   public void Update() {
@@ -25,6 +25,14 @@ public class Statue : MonoBehaviour {
         StartCoroutine(Activate());
       }
     }
+  }
+
+  /// <summary>
+  ///   Accept a human.
+  /// </summary>
+  private void AcceptHuman(GameObject human) {
+    // add designated component :P
+    human.AddComponent<Acceptor>();
   }
 
   /// <summary>
@@ -40,7 +48,7 @@ public class Statue : MonoBehaviour {
       var goal = _levelManager.Goals[0];
 
       // say it
-      _dialogManager.Say("Current goal:\n<color=#006c4c>" + goal.Text + "</color>",
+      _dialogManager.Say("Current goal:\n" + goal.Text,
                          transform.position + new Vector3(0, 40f),
                          4f);
 
@@ -116,14 +124,6 @@ public class Statue : MonoBehaviour {
       // deactivate
       StartCoroutine(DeactivateAfter(4f));
     }
-  }
-
-  /// <summary>
-  /// Accept a human.
-  /// </summary>
-  private void AcceptHuman(GameObject human) {
-    // add designated component :P
-    human.AddComponent<Acceptor>();
   }
 
   /// <summary>
