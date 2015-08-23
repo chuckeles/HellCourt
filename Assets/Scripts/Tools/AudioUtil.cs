@@ -25,6 +25,19 @@ public class AudioUtil {
   }
 
   /// <summary>
+  ///   Play a clip.
+  /// </summary>
+  public static AudioSource PlayAtPositionWithRandomPitch(Vector2 position, AudioClip clip) {
+    // create audio
+    var audio = CreateAudioObject(position, clip);
+
+    // modify pitch
+    audio.pitch = Random.Range(0.8f, 1.2f);
+
+    return audio;
+  }
+
+  /// <summary>
   ///   Creates a temporary audio object.
   /// </summary>
   private static AudioSource CreateAudioObject(Vector2 position, AudioClip clip, bool destroy = true, bool play = true) {

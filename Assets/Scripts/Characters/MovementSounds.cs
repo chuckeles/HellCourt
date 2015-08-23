@@ -16,21 +16,21 @@ public class MovementSounds : MonoBehaviour {
   ///   Plays the jump sound.
   /// </summary>
   public void PlayJump() {
-    AudioUtil.PlayAtPosition(transform.position, JumpSound);
+    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, JumpSound);
   }
 
   /// <summary>
   ///   Plays the land sound.
   /// </summary>
   public void PlayLand() {
-    AudioUtil.PlayAtPosition(transform.position, LandSound);
+    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, LandSound);
   }
 
   /// <summary>
   ///   Plays the step sound.
   /// </summary>
   public void PlayStep() {
-    AudioUtil.PlayAtPosition(transform.position, StepSound);
+    AudioUtil.PlayAtPositionWithRandomPitch(transform.position, StepSound);
   }
 
   /// <summary>
