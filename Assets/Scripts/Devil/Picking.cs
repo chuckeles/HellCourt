@@ -10,6 +10,11 @@ public class Picking : MonoBehaviour {
   /// </summary>
   public delegate void DroppedDelegate(GameObject human);
 
+  public void Awake() {
+    // get components
+    _animator = GetComponent<Animator>();
+  }
+
   public void Update() {
     // check input
     if (Input.GetButtonDown("Use")) {
@@ -68,6 +73,10 @@ public class Picking : MonoBehaviour {
 
     // reset variable
     _pickedHuman = null;
+
+    // update animator
+    if (_animator)
+      _animator.SetBool("Carrying", false);
   }
 
   /// <summary>
@@ -93,6 +102,10 @@ public class Picking : MonoBehaviour {
 
     // position above us
     human.transform.localPosition = CarryOffset;
+
+    // update animator
+    if (_animator)
+      _animator.SetBool("Carrying", true);
   }
 
   /// <summary>
@@ -104,6 +117,11 @@ public class Picking : MonoBehaviour {
   ///   From how far the devil can pick.
   /// </summary>
   public float PickRange = 32f;
+
+  /// <summary>
+  ///   The animator component.
+  /// </summary>
+  private Animator _animator;
 
   /// <summary>
   ///   Original parent of human.
