@@ -93,11 +93,11 @@ public class Statue : MonoBehaviour {
       var mentalRequired = sinner.RequiredMentalPain;
       var physicalRequired = sinner.RequiredPhysicalPain;
 
-      if ((mentalRequired > 0.01f && sinner.MentalPain > mentalRequired && sinner.MentalPain < mentalRequired * 3f ||
-           mentalRequired < 0.01f) &&
+      if ((mentalRequired > 0.01f && sinner.MentalPain > mentalRequired && sinner.MentalPain < mentalRequired * 2f ||
+           mentalRequired < 0.01f && sinner.MentalPain < mentalRequired) &&
           (physicalRequired > 0.01f && sinner.PhysicalPain > physicalRequired &&
-           sinner.PhysicalPain < physicalRequired * 3f ||
-           physicalRequired < 0.01f)) {
+           sinner.PhysicalPain < physicalRequired * 2f ||
+           physicalRequired < 0.01f && sinner.PhysicalPain < physicalRequired)) {
         // human is good
         _dialogManager.Say(GoodHumanSentences[Random.Range(0, WinSentences.Length)],
                            transform.position + new Vector3(0, 40f),

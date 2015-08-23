@@ -48,13 +48,13 @@ public class HumanInfo : MonoBehaviour {
     if (pain > 3f)
       return "Enormous";
     if (pain > 2f)
-      return "<color=#" + yellow + ">Huge</color>";
+      return "Huge";
     if (pain > 1.5f)
-      return "<color=#" + yellow + ">Big</color>";
+      return required ? "<color=#" + yellow + ">Big</color>" : "Big";
     if (pain > 1f)
-      return "<color=#" + green + ">Enough</color>";
+      return required ? "<color=#" + green + ">Enough</color>" : "Mediocre";
     if (pain > 0.01f)
-      return "Little";
+      return required ? "Little" : "<color=#" + green + ">Little</color>";
 
     // no pain
     return required ? "No" : "<color=#" + green + ">No</color>";
