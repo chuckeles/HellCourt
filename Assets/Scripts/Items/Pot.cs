@@ -11,17 +11,16 @@ public class Pot : MonoBehaviour {
     _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
   }
 
-  public void Start() {
-    // start hurting
-    StartCoroutine(Hurt());
-  }
-
+  /// <summary>
+  ///   Hurts humans in the pot.
+  /// </summary>
   public IEnumerator Hurt() {
     // get all humans
     var overlaps = Physics2D.OverlapAreaAll((Vector2) transform.position + DamageAreaMin,
                                             (Vector2) transform.position + DamageAreaMax,
                                             HumanLayer);
 
+    var playedSound = false;
     foreach (var overlap in overlaps) {
       var sinner = overlap.GetComponent<Sinner>();
 
@@ -29,6 +28,17 @@ public class Pot : MonoBehaviour {
       if (sinner) {
         // apply pain
         sinner.PhysicalPain += _levelManager.PainMultiplier;
+
+        // add random force
+        var body = sinner.GetComponent<Rigidbody2D>();
+        if (body)
+          body.velocity = new Vector2(Random.Range(-50f, 50f), Random.Range(40f, 80f));
+
+        // play sound
+        if (!playedSound) {
+          AudioUtil.PlayAtPositionWithPitch(transform.position, HurtSound);
+          playedSound = true;
+        }
       }
     }
 
@@ -36,6 +46,22 @@ public class Pot : MonoBehaviour {
     yield return new WaitForSeconds(1);
 
     // repeat
+    StartCoroutine(Hurt());
+  }
+
+  public void Start() {
+    // start hurting
+    StartCoroutine(HurtFirst());
+  }
+
+  /// <summary>
+  ///   Random hurt offset.
+  /// </summary>
+  private IEnumerator HurtFirst() {
+    // wait
+    yield return new WaitForSeconds(Random.Range(0f, 1f));
+
+    // hurt
     StartCoroutine(Hurt());
   }
 
@@ -53,6 +79,11 @@ public class Pot : MonoBehaviour {
   ///   Human's collision layer.
   /// </summary>
   public LayerMask HumanLayer;
+
+  /// <summary>
+  ///   The hurt sound.
+  /// </summary>
+  public AudioClip HurtSound;
 
   /// <summary>
   ///   The level manager.

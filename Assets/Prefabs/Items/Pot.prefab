@@ -120,6 +120,7 @@ MonoBehaviour:
   HumanLayer:
     serializedVersion: 2
     m_Bits: 512
+  HurtSound: {fileID: 8300000, guid: 73d42ffdd8a02cd48b8d379d5b889bc1, type: 3}
 --- !u!114 &11496874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1245,6 +1246,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: bfbb42cff32b6b04d9452f530b083f90, type: 2}
+    - target: {fileID: 0}
+      propertyPath: HurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 73d42ffdd8a02cd48b8d379d5b889bc1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190616}
