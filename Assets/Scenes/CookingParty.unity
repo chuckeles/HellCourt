@@ -1231,7 +1231,7 @@ Transform:
   - {fileID: 1318931154}
   - {fileID: 1121946034}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &1070315660
 Prefab:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[9].SayLine
-      value: I robbed a jewelry.
+      value: I robbed a jewelry store.
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[10].MentalPainNeeded
@@ -1555,7 +1555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[14].SayLine
-      value: I kicked my cat
+      value: I kicked my cat.
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[15].MentalPainNeeded
@@ -2093,7 +2093,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 482452, guid: d3bbcd2fdbbc4ba46a2deec438288e45, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3bbcd2fdbbc4ba46a2deec438288e45, type: 2}
@@ -2681,7 +2681,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 22409130, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2731,7 +2731,7 @@ Prefab:
       propertyPath: m_Text
       value: 'Created for the
 
-        <color=#006c4c>Ludum Dare #33 (Jam)</color>'
+        <color=#006c4c>Ludum Dare #33</color>'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}

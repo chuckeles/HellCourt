@@ -1481,7 +1481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[9].SayLine
-      value: I robbed a jewelry.
+      value: I robbed a jewelry store.
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[10].MentalPainNeeded
@@ -1521,7 +1521,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[14].SayLine
-      value: I kicked my cat
+      value: I kicked my cat.
       objectReference: {fileID: 0}
     - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: Sins.Array.data[15].MentalPainNeeded

@@ -126,24 +126,35 @@ public class Statue : MonoBehaviour {
         AcceptHuman(human);
 
         // send event
+        var mentalString = HumanInfo.GetPainString(
+          mentalRequired > 0.01f ? sinner.MentalPain / mentalRequired : sinner.MentalPain / 20f,
+          mentalRequired > 0.01f);
+        var physicalString = HumanInfo.GetPainString(
+          physicalRequired > 0.01f
+            ? sinner.PhysicalPain / physicalRequired
+            : sinner.PhysicalPain / 20f,
+          physicalRequired > 0.01f);
+
+        var mentalWord = mentalString;
+        var physicalWord = physicalString;
+
+        if (mentalWord.IndexOf('<') >= 0)
+          mentalWord = mentalWord.Substring(mentalWord.IndexOf('>') + 1,
+                                            mentalWord.LastIndexOf('<') - mentalWord.IndexOf('>') - 1);
+        if (physicalWord.IndexOf('<') >= 0)
+          physicalWord = physicalWord.Substring(physicalWord.IndexOf('>') + 1,
+                                                physicalWord.LastIndexOf('<') - physicalWord.IndexOf('>') - 1);
+
         Analytics.Send("HumanReturned",
                        new Dictionary<string, object> {
                          {"MentalPain", sinner.MentalPain},
                          {"PhysicalPain", sinner.PhysicalPain},
                          {"RequiredMentalPain", mentalRequired},
-                         {"RequiredPhysicalPain", physicalRequired}, {
-                           "MentalPainString",
-                           HumanInfo.GetPainString(
-                             mentalRequired > 0.01f ? sinner.MentalPain / mentalRequired : sinner.MentalPain / 20f,
-                             mentalRequired > 0.01f)
-                         }, {
-                           "PhysicalPainString",
-                           HumanInfo.GetPainString(
-                             physicalRequired > 0.01f
-                               ? sinner.PhysicalPain / physicalRequired
-                               : sinner.PhysicalPain / 20f,
-                             physicalRequired > 0.01f)
-                         },
+                         {"RequiredPhysicalPain", physicalRequired},
+                         {"MentalPainString", mentalString},
+                         {"PhysicalPainString", physicalString},
+                         {"MentalPainWord", mentalWord},
+                         {"PhysicalPainWord", physicalWord},
                          {"Sins", sinner.Sins.Count}
                        });
 
