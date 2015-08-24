@@ -4,6 +4,12 @@
 
 This is my game for the [Ludum Dare #33](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=33094). You play as a devil and hurt humans that fall into the hell. Each level has it's own goals, but the gist of it is that you ask the human about their sins and then deal appropriate amount of mental and physical damage. After that, you return the human to your evil masters.
 
+## Links ![bookstand](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Bookstand.png)
+
+Useful links:
+- [Ludum Dare #33 entry](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=33094)
+- [Itch.io](http://chuckeles.itch.io/hell-court)
+
 ## Used tools ![pot](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Pot.png)
 
 Here's what I've used during development:
