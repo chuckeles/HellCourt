@@ -13,6 +13,12 @@ public class FallDamage : MonoBehaviour {
   }
 
   public void OnCollisionEnter2D(Collision2D collision) {
+    if (!_firstIgnored) {
+      // spawn fall
+      _firstIgnored = true;
+      return;
+    }
+
     // calculate pain
     var pain = collision.relativeVelocity.magnitude;
     pain -= 200f;
@@ -22,6 +28,11 @@ public class FallDamage : MonoBehaviour {
     // apply pain
     _sinner.PhysicalPain += pain * _manager.PainMultiplier;
   }
+
+  /// <summary>
+  ///   Ignore first fall (spawn).
+  /// </summary>
+  private bool _firstIgnored;
 
   /// <summary>
   ///   The level manager.
