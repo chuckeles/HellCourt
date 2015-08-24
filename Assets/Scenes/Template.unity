@@ -444,6 +444,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2052836921}
     m_Modifications:
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.size
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 477940, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -475,6 +479,458 @@ Prefab:
     - target: {fileID: 477940, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[0].MentalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[0].SayLine
+      value: I stole a bed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[1].MentalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[1].SayLine
+      value: I stole a hat.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[2].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[2].SayLine
+      value: I stole a PC.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[3].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[3].SayLine
+      value: I stole a phone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[4].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[4].SayLine
+      value: I stole money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[5].MentalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[5].SayLine
+      value: I stole a guitar and played on it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[6].MentalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[6].SayLine
+      value: I stole a book.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[7].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[7].SayLine
+      value: I stole keys from my neighbour's house.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[8].MentalPainNeeded
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[8].SayLine
+      value: I robbed a bank.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[9].MentalPainNeeded
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[9].SayLine
+      value: I robbed a jewelry store.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[10].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[10].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[10].SayLine
+      value: I punched my brother.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[11].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[11].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[11].SayLine
+      value: I punched my best friend.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[12].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[12].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[12].SayLine
+      value: I punched my sister.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[13].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[13].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[13].SayLine
+      value: I kicked my dog.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[14].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[14].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[14].SayLine
+      value: I kicked my cat.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[15].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[15].PhysicalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[15].SayLine
+      value: I kicked a teacher in my school.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[16].MentalPainNeeded
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[16].SayLine
+      value: I set a forest on fire.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[17].MentalPainNeeded
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[17].SayLine
+      value: I set a building on fire.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[18].MentalPainNeeded
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[18].SayLine
+      value: I lied to a lot of people.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[19].MentalPainNeeded
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[19].SayLine
+      value: I hacked international security service.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[20].MentalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[20].PhysicalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[20].SayLine
+      value: I stole a tank.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[21].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[21].SayLine
+      value: I stole a schoolbag from a little girl.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[22].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[22].SayLine
+      value: I stole a painting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[23].MentalPainNeeded
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[23].SayLine
+      value: I stole a  truck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[24].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[24].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[24].SayLine
+      value: I killed a man.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[25].MentalPainNeeded
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[25].SayLine
+      value: I killed a woman.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[26].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[26].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[26].SayLine
+      value: I killed a dog.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[27].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[27].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[27].SayLine
+      value: I killed a policeman.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[28].MentalPainNeeded
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[28].PhysicalPainNeeded
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[28].SayLine
+      value: I killed a security guard and laughed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[29].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[29].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[29].SayLine
+      value: I killed an old man.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[30].MentalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[30].PhysicalPainNeeded
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[30].SayLine
+      value: I killed someone's whole family.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[31].MentalPainNeeded
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[31].PhysicalPainNeeded
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[31].SayLine
+      value: I slaughtered 2 men.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[32].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[32].PhysicalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[32].SayLine
+      value: I destroyed a building.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[33].MentalPainNeeded
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[33].SayLine
+      value: I destroyed my office.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[34].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[34].SayLine
+      value: I destroyed my sister's party.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[35].MentalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[35].PhysicalPainNeeded
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[35].SayLine
+      value: I planted a bomb in a town.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[36].MentalPainNeeded
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[36].PhysicalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[36].SayLine
+      value: I planted a bomb in an airplane.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[37].MentalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[37].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[37].SayLine
+      value: I planted a bomb in my mother-in-law's house.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[38].MentalPainNeeded
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[38].PhysicalPainNeeded
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[38].SayLine
+      value: I planted a bomb in my town's square.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[39].MentalPainNeeded
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[39].PhysicalPainNeeded
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[39].SayLine
+      value: I planted a bomb but it was defused.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[40].MentalPainNeeded
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[40].PhysicalPainNeeded
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[40].SayLine
+      value: I got into a car accident and run away.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[41].MentalPainNeeded
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[41].SayLine
+      value: I threw a man agains a wall.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[42].MentalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[42].PhysicalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[42].SayLine
+      value: I stole a tanker.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[43].MentalPainNeeded
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[43].SayLine
+      value: I stole an ukulele.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[44].MentalPainNeeded
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[44].PhysicalPainNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425768, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}
+      propertyPath: Sins.Array.data[44].SayLine
+      value: I stabbed a guard.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffd66edb473bbee4d8014906893f2bb9, type: 2}

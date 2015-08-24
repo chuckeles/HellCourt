@@ -12,7 +12,7 @@ public class Door : MonoBehaviour {
 
   public void Update() {
     // check input
-    if (Input.GetButtonDown("Jump")) {
+    if (Input.GetButtonDown("Jump") && OtherDoor) {
       // check distance
       if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
         // teleport devil to other door
@@ -22,6 +22,12 @@ public class Door : MonoBehaviour {
         AudioUtil.PlayAtPositionWithPitch(_devil.transform.position, DoorSound);
       }
     }
+  }
+
+  public void OnDrawGizmosSelected() {
+    // draw line to other door
+    if (OtherDoor)
+      Gizmos.DrawLine(transform.position, OtherDoor.transform.position);
   }
 
   /// <summary>
