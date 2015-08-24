@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2621b7b15d54944b4e2ec556036fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorSound: {fileID: 8300000, guid: 3c4b8b361d65ee645821def344b31898, type: 3}
   OtherDoor: {fileID: 0}
   TriggerDistance: 8
 --- !u!212 &21211250
@@ -95,6 +96,10 @@ Prefab:
       propertyPath: TriggerDistance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DoorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c4b8b361d65ee645821def344b31898, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186952}

@@ -17,9 +17,17 @@ public class Door : MonoBehaviour {
       if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
         // teleport devil to other door
         _devil.transform.position = OtherDoor.transform.position + new Vector3(0, 10f);
+
+        // play sound
+        AudioUtil.PlayAtPositionWithPitch(_devil.transform.position, DoorSound);
       }
     }
   }
+
+  /// <summary>
+  /// Door traveling sound.
+  /// </summary>
+  public AudioClip DoorSound;
 
   /// <summary>
   ///   Where to teleport.
