@@ -71,10 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01b31370e4957649bd7f0cd260db853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplashSound: {fileID: 8300000, guid: 258fd23da3aaadc45a5be67c2b321dc9, type: 3}
   MaxHealDistance: 64
   ParticleSystemPrefab: {fileID: 190614, guid: c20ae60b988bdb046a9cd864f0dfde69, type: 2}
   ReduceAmount: 10
+  SplashSound: {fileID: 8300000, guid: 258fd23da3aaadc45a5be67c2b321dc9, type: 3}
 --- !u!212 &21271268
 SpriteRenderer:
   m_ObjectHideFlags: 1

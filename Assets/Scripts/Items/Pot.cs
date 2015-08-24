@@ -40,7 +40,7 @@ public class Pot : MonoBehaviour {
 
         // play sound
         if (!playedSound) {
-          AudioUtil.PlayAtPositionWithPitch(transform.position, HurtSound).volume *= 0.5f;
+          AudioUtil.PlayAtPositionWithPitch(sinner.transform.position, HurtSound).volume *= 0.5f;
           playedSound = true;
         }
       }

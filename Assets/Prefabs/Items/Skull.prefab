@@ -58,6 +58,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   HurtRadius: 32
+  InflictedPain: .200000003
 --- !u!212 &21298940
 SpriteRenderer:
   m_ObjectHideFlags: 1
