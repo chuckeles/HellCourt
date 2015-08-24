@@ -31,12 +31,12 @@ public class Pot : MonoBehaviour {
 
         // add random force
         var body = sinner.GetComponent<Rigidbody2D>();
-        if (body)
-          body.velocity = new Vector2(Random.Range(-50f, 50f), Random.Range(40f, 80f));
+        if (body && !body.isKinematic)
+          body.velocity += new Vector2(Random.Range(-50f, 50f), Random.Range(40f, 80f));
 
         // play sound
         if (!playedSound) {
-          AudioUtil.PlayAtPositionWithPitch(transform.position, HurtSound);
+          AudioUtil.PlayAtPositionWithPitch(transform.position, HurtSound).volume *= 0.5f;
           playedSound = true;
         }
       }

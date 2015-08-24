@@ -49,13 +49,10 @@ public class Wander : MonoBehaviour {
   ///   Start a new wandering.
   /// </summary>
   private IEnumerator StartWander() {
-    // wait
-    yield return new WaitForSeconds(Random.Range(2f, 5f));
-
+    var mult = 1f;
     // preconditions
     if (enabled && !_wandering) {
       // check pain
-      var mult = 1f;
       if (_sinner) {
         if (_sinner.MentalPain > _sinner.RequiredMentalPain) {
           // wander farther
@@ -68,6 +65,9 @@ public class Wander : MonoBehaviour {
       _remaining += Random.Range(MaxWanderDistance * 0.2f, MaxWanderDistance * mult) *
                     (Random.Range(0, 10f) < 5f ? -1f : 1f);
     }
+
+    // wait
+    yield return new WaitForSeconds(Random.Range(2f / mult, 5f / mult));
 
     // repeat
     StartCoroutine(StartWander());

@@ -64,6 +64,7 @@ public class AudioUtil {
     var magnitude = distance.magnitude;
     if (magnitude > 0.01f) {
       audio.volume = Mathf.Lerp(1, 0, magnitude / MaxHearingDistance);
+      audio.volume = audio.volume * audio.volume;
       audio.panStereo = Mathf.Lerp(-1, 1, (distance.x / MaxPanDistance + 1) / 2);
     }
 
