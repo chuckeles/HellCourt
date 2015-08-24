@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 466426}
   - 212: {fileID: 21279474}
-  - 114: {fileID: 11455250}
+  - 114: {fileID: 11442526}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32cfb6e06ef98f42862ccf32fc88253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11455250
+--- !u!114 &11442526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,14 +110,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 152078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63ced001ce3e1a4a811b6f8c69a9739, type: 3}
+  m_Script: {fileID: 11500000, guid: fa232dc29c97ba645931c83c32c5bde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAreaMax: {x: 8, y: 1}
+  DamageAreaMax: {x: 8, y: 8}
   DamageAreaMin: {x: -8, y: -8}
   HumanLayer:
     serializedVersion: 2
     m_Bits: 512
+  HurtSound: {fileID: 8300000, guid: 73d42ffdd8a02cd48b8d379d5b889bc1, type: 3}
 --- !u!114 &11466650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2246,7 +2247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: DamageAreaMax.y
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
@@ -2304,6 +2305,10 @@ Prefab:
       propertyPath: lengthInSec
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 73d42ffdd8a02cd48b8d379d5b889bc1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152078}
