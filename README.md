@@ -2,7 +2,7 @@
 
 ## Information ![pole](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Pole.png)
 
-This is my game for the [Ludum Dare](http://ludumdare.com/compo/) #33. (*TODO: Add link to post.*) You play as a devil and hurt humans that fall into the hell. Each level has it's own goals, but the gist of it is that you ask the human about their sins and then deal appropriate amount of mental and physical damage. After that, you return the human to your evil masters.
+This is my game for the [Ludum Dare #33](http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=33094). You play as a devil and hurt humans that fall into the hell. Each level has it's own goals, but the gist of it is that you ask the human about their sins and then deal appropriate amount of mental and physical damage. After that, you return the human to your evil masters.
 
 ## Used tools ![pot](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Pot.png)
 
