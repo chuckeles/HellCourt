@@ -14,24 +14,10 @@ public class HumanInfo : MonoBehaviour {
     _pickable = GetComponent<Pickable>();
   }
 
-  public void Start() {
-    // create the info
-    _info = Instantiate(HumanInfoPrefab);
-
-    // set parent
-    _info.transform.SetParent(transform, false);
-
-    // move down
-    _info.transform.localPosition = Offset;
-
-    // start checking
-    StartCoroutine(Check());
-  }
-
   /// <summary>
   ///   Get pain string from pain.
   /// </summary>
-  private string GetPainString(float pain, bool required) {
+  public static string GetPainString(float pain, bool required) {
     // colors
     var green = "006c4c";
     var yellow = "f08b18";
@@ -59,6 +45,20 @@ public class HumanInfo : MonoBehaviour {
 
     // no pain
     return required ? "No" : "<color=#" + green + ">No</color>";
+  }
+
+  public void Start() {
+    // create the info
+    _info = Instantiate(HumanInfoPrefab);
+
+    // set parent
+    _info.transform.SetParent(transform, false);
+
+    // move down
+    _info.transform.localPosition = Offset;
+
+    // start checking
+    StartCoroutine(Check());
   }
 
   /// <summary>
@@ -98,6 +98,16 @@ public class HumanInfo : MonoBehaviour {
       _info.transform.localPosition = Offset + new Vector2(0, -20f);
     else
       _info.transform.localPosition = Offset;
+
+    // send crazy events
+    if (!_sinner.MentalEventSent && mentalPain > 10f) {
+      _sinner.MentalEventSent = true;
+      Analytics.Send("CrazyMentalPain");
+    }
+    if (!_sinner.PhysicalEventSent && physicalPain > 10f) {
+      _sinner.PhysicalEventSent = true;
+      Analytics.Send("CrazyPhysicalPain");
+    }
 
     // wait
     yield return new WaitForSeconds(.1f);

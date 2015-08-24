@@ -27,6 +27,9 @@ public class Statue : MonoBehaviour {
 
     // set saved levels
     PlayerPrefsX.SetStringArray("FinishedLevels", levels.ToArray());
+
+    // send event
+    Analytics.Send("LevelStarted");
   }
 
   public void Update() {
@@ -122,6 +125,28 @@ public class Statue : MonoBehaviour {
         // accept him
         AcceptHuman(human);
 
+        // send event
+        Analytics.Send("HumanReturned",
+                       new Dictionary<string, object> {
+                         {"MentalPain", sinner.MentalPain},
+                         {"PhysicalPain", sinner.PhysicalPain},
+                         {"RequiredMentalPain", mentalRequired},
+                         {"RequiredPhysicalPain", physicalRequired}, {
+                           "MentalPainString",
+                           HumanInfo.GetPainString(
+                             mentalRequired > 0.01f ? sinner.MentalPain / mentalRequired : sinner.MentalPain / 20f,
+                             mentalRequired > 0.01f)
+                         }, {
+                           "PhysicalPainString",
+                           HumanInfo.GetPainString(
+                             physicalRequired > 0.01f
+                               ? sinner.PhysicalPain / physicalRequired
+                               : sinner.PhysicalPain / 20f,
+                             physicalRequired > 0.01f)
+                         },
+                         {"Sins", sinner.Sins.Count}
+                       });
+
         // update level score
         if (mentalRequired < 0.01) {
           // mental not required
@@ -210,6 +235,13 @@ public class Statue : MonoBehaviour {
     if (_score > savedScore)
       // save
       PlayerPrefs.SetFloat(Application.loadedLevelName + "Score", _score);
+
+    // send event
+    Analytics.Send("LevelFinished",
+                   new Dictionary<string, object> {
+                     {"Time", currentTime},
+                     {"Score", _score}
+                   });
   }
 
   /// <summary>

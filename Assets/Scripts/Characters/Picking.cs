@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -171,6 +172,13 @@ public class Picking : MonoBehaviour {
     var sound = GetComponent<CharacterSounds>();
     if (sound)
       sound.PlayPick();
+
+    // send event
+    var name = human.name;
+    name = name.Replace("(Clone)", "");
+    Analytics.Send("Picked", new Dictionary<string, object> {
+      {"Name", name}
+    });
   }
 
   /// <summary>

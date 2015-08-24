@@ -26,6 +26,16 @@ public class Sinner : MonoBehaviour {
   }
 
   /// <summary>
+  /// Mental crazy event sent.
+  /// </summary>
+  public bool MentalEventSent;
+
+  /// <summary>
+  /// Physical crazy event sent.
+  /// </summary>
+  public bool PhysicalEventSent;
+
+  /// <summary>
   ///   Mental pain required for the human to be free.
   /// </summary>
   public float RequiredMentalPain {
