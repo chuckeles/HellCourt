@@ -18,7 +18,7 @@ public class Door : MonoBehaviour {
 
   public void Update() {
     // check input
-    if (Input.GetButtonDown("Crouch") && OtherDoor) {
+    if (Input.GetButtonDown("UseDoor") && OtherDoor) {
       // check distance
       if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
         // teleport devil to other door
