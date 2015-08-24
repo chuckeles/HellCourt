@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ScaryDoors.unity
   - enabled: 1
     path: Assets/Scenes/Shaft.unity
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
