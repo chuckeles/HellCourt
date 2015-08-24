@@ -1,7 +1,8 @@
-# HellCourt
-My game for the Ludum Dare #33
+# HellCourt ![devil-head](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Devil.png) ![devil-head](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Human.png)  ![devil-head](https://rawgit.com/chuckeles/HellCourtJam/master/Assets/Images/Skeleton.png)
 
-**TODO: Write this**
+## Information
+
+This is my game for the Ludum Dare #33. (*TODO: Add link to post.*) You play as a devil and hurt humans that fall into the hell. Each level has it's own goals, but the gist of it is that you ask the human about their sins and then deal appropriate amount of mental and physical damage. After that, you return the human to your evil masters.
 
 **TODO: Add used tools and things**
 
