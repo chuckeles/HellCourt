@@ -127,6 +127,9 @@ public class SayRandomThings : MonoBehaviour {
     "I'm tired...", "I can barely move...", "Just... stand... here..."
   };
 
+  private float _lastMental;
+  private float _lastPhysical;
+
   /// <summary>
   ///   The dialog manager.
   /// </summary>
@@ -141,8 +144,5 @@ public class SayRandomThings : MonoBehaviour {
   ///   The sinner component.
   /// </summary>
   private Sinner _sinner;
-
-  private float _lastMental;
-  private float _lastPhysical;
 
 }
