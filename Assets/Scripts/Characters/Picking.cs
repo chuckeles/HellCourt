@@ -176,9 +176,10 @@ public class Picking : MonoBehaviour {
     // send event
     var name = human.name;
     name = name.Replace("(Clone)", "");
-    Analytics.Send("Picked", new Dictionary<string, object> {
-      {"Name", name}
-    });
+    Analytics.Send("Picked",
+                   new Dictionary<string, object> {
+                     {"Name", name}
+                   });
   }
 
   /// <summary>

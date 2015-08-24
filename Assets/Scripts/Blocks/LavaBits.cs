@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Spawns lava bits.
+///   Spawns lava bits.
 /// </summary>
 public class LavaBits : MonoBehaviour {
 
@@ -17,7 +17,7 @@ public class LavaBits : MonoBehaviour {
   }
 
   /// <summary>
-  /// Spawns a bit.
+  ///   Spawns a bit.
   /// </summary>
   private IEnumerator Spawn() {
     // wait
@@ -31,7 +31,7 @@ public class LavaBits : MonoBehaviour {
   }
 
   /// <summary>
-  /// The particle system.
+  ///   The particle system.
   /// </summary>
   private ParticleSystem _system;
 

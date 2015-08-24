@@ -21,7 +21,7 @@ public class AnimatorUpdater : MonoBehaviour {
 
     // update carried
     if (_pickable)
-    _animator.SetBool("Carried", _pickable.Picked);
+      _animator.SetBool("Carried", _pickable.Picked);
 
     // update falling
     _animator.SetBool("Falling",

@@ -10,6 +10,12 @@ public class Door : MonoBehaviour {
     _devil = GameObject.FindWithTag("Player");
   }
 
+  public void OnDrawGizmosSelected() {
+    // draw line to other door
+    if (OtherDoor)
+      Gizmos.DrawLine(transform.position, OtherDoor.transform.position);
+  }
+
   public void Update() {
     // check input
     if (Input.GetButtonDown("Crouch") && OtherDoor) {
@@ -24,14 +30,8 @@ public class Door : MonoBehaviour {
     }
   }
 
-  public void OnDrawGizmosSelected() {
-    // draw line to other door
-    if (OtherDoor)
-      Gizmos.DrawLine(transform.position, OtherDoor.transform.position);
-  }
-
   /// <summary>
-  /// Door traveling sound.
+  ///   Door traveling sound.
   /// </summary>
   public AudioClip DoorSound;
 

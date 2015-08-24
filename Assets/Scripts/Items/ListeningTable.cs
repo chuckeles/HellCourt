@@ -71,9 +71,10 @@ public class ListeningTable : MonoBehaviour {
     _dialogManager.SayPitch("You will pay for your sins.", new Vector2(0, 20f), .7f, 4f, _devil);
 
     // send event
-    Analytics.Send("HumanListened", new Dictionary<string, object> {
-      {"Sins", _human.GetComponent<Sinner>().Sins.Count}
-    });
+    Analytics.Send("HumanListened",
+                   new Dictionary<string, object> {
+                     {"Sins", _human.GetComponent<Sinner>().Sins.Count}
+                   });
 
     // wait
     yield return new WaitForSeconds(.5f);

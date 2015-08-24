@@ -26,16 +26,6 @@ public class Sinner : MonoBehaviour {
   }
 
   /// <summary>
-  /// Mental crazy event sent.
-  /// </summary>
-  public bool MentalEventSent;
-
-  /// <summary>
-  /// Physical crazy event sent.
-  /// </summary>
-  public bool PhysicalEventSent;
-
-  /// <summary>
   ///   Mental pain required for the human to be free.
   /// </summary>
   public float RequiredMentalPain {
@@ -50,9 +40,19 @@ public class Sinner : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Mental crazy event sent.
+  /// </summary>
+  public bool MentalEventSent;
+
+  /// <summary>
   ///   Current mental pain.
   /// </summary>
   public float MentalPain = 0f;
+
+  /// <summary>
+  ///   Physical crazy event sent.
+  /// </summary>
+  public bool PhysicalEventSent;
 
   /// <summary>
   ///   Current physical pain.

@@ -47,7 +47,11 @@ public class HealingTable : MonoBehaviour {
       _canceled = false;
 
       // say a thing
-      _dialogManager.SayPitch(PlaceSentences[Random.Range(0, PlaceSentences.Length)], new Vector2(0, 20f), .7f, 2f, _devil);
+      _dialogManager.SayPitch(PlaceSentences[Random.Range(0, PlaceSentences.Length)],
+                              new Vector2(0, 20f),
+                              .7f,
+                              2f,
+                              _devil);
 
       // start throwing
       StartCoroutine(Throw());

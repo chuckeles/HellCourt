@@ -43,7 +43,9 @@ public class Movement : MonoBehaviour {
     }
 
     // test if on the ground
-    var verticalHit = Physics2D.OverlapCircle(origin + new Vector2(-moveInput * Speed * Time.fixedDeltaTime, -2f), _collider.radius, SolidLayerMask);
+    var verticalHit = Physics2D.OverlapCircle(origin + new Vector2(-moveInput * Speed * Time.fixedDeltaTime, -2f),
+                                              _collider.radius,
+                                              SolidLayerMask);
 
     if (verticalHit && jumpInput) {
       // jump

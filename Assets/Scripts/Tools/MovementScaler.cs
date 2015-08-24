@@ -16,7 +16,7 @@ public class MovementScaler : MonoBehaviour {
     // check if picked
     if (_pickable && _pickable.Picked)
       return;
-    
+
     // get velocity x
     var vx = _body.velocity.x;
 
@@ -28,7 +28,14 @@ public class MovementScaler : MonoBehaviour {
   }
 
   /// <summary>
-  /// Handles children scaling.
+  ///   Scale when child.
+  /// </summary>
+  private void ScaleAsChild(float parentScaleX) {
+    UnscaleChildren(parentScaleX);
+  }
+
+  /// <summary>
+  ///   Handles children scaling.
   /// </summary>
   private void UnscaleChildren(float parentScaleX) {
     // get all children
@@ -49,19 +56,12 @@ public class MovementScaler : MonoBehaviour {
   }
 
   /// <summary>
-  ///   Scale when child.
-  /// </summary>
-  private void ScaleAsChild(float parentScaleX) {
-    UnscaleChildren(parentScaleX);
-  }
-
-  /// <summary>
   ///   Body component.
   /// </summary>
   private Rigidbody2D _body;
 
   /// <summary>
-  /// Pickable component.
+  ///   Pickable component.
   /// </summary>
   private Pickable _pickable;
 

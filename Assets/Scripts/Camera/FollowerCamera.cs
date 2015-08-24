@@ -32,6 +32,11 @@ public class FollowerCamera : MonoBehaviour {
   }
 
   /// <summary>
+  ///   Deadzone.
+  /// </summary>
+  public float Deadzone = 16f;
+
+  /// <summary>
   ///   Target point offset.
   /// </summary>
   public Vector2 Offset = new Vector2();
@@ -40,11 +45,6 @@ public class FollowerCamera : MonoBehaviour {
   ///   Translation speed.
   /// </summary>
   public float Speed = 1f;
-
-  /// <summary>
-  /// Deadzone.
-  /// </summary>
-  public float Deadzone = 16f;
 
   /// <summary>
   ///   Target to follow.

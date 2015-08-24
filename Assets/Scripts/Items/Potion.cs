@@ -46,10 +46,6 @@ public class Potion : MonoBehaviour {
     // destroy
     Destroy(gameObject);
   }
-  /// <summary>
-  /// The splash sound.
-  /// </summary>
-  public AudioClip SplashSound;
 
   /// <summary>
   ///   Max distance to heal.
@@ -65,5 +61,10 @@ public class Potion : MonoBehaviour {
   ///   How much to reduce pain.
   /// </summary>
   public float ReduceAmount = 10f;
+
+  /// <summary>
+  ///   The splash sound.
+  /// </summary>
+  public AudioClip SplashSound;
 
 }
