@@ -12,12 +12,6 @@ public class Movement : MonoBehaviour {
     _collider = GetComponent<CircleCollider2D>();
   }
 
-  public void Update() {
-    // read jump input
-    if (Input.GetButtonDown("Jump"))
-      _jumping = true;
-  }
-
   public void FixedUpdate() {
     // get input
     var moveInput = Input.GetAxisRaw("Horizontal");
@@ -34,11 +28,11 @@ public class Movement : MonoBehaviour {
       // test horizontal collision
       var horizontalHit =
         Physics2D.OverlapCircle(
-          origin + new Vector2(moveInput * (_collider.radius / 2 + Speed * Time.fixedDeltaTime), _collider.radius / 2),
-          _collider.radius / 2,
+          origin + new Vector2(moveInput * Speed * Time.fixedDeltaTime, 1f),
+          _collider.radius,
           SolidLayerMask);
 
-      if (!horizontalHit) {
+      if (!horizontalHit || horizontalHit.tag == "Steps") {
         // set horizontal movement
         newVelocity.x = moveInput * Speed;
       }
@@ -63,6 +57,12 @@ public class Movement : MonoBehaviour {
 
     // update velocity
     _body.velocity = newVelocity;
+  }
+
+  public void Update() {
+    // read jump input
+    if (Input.GetButtonDown("Jump"))
+      _jumping = true;
   }
 
   /// <summary>
@@ -91,8 +91,8 @@ public class Movement : MonoBehaviour {
   private CircleCollider2D _collider;
 
   /// <summary>
-  /// True if we got a jump input.
+  ///   True if we got a jump input.
   /// </summary>
-  private bool _jumping = false;
+  private bool _jumping;
 
 }
