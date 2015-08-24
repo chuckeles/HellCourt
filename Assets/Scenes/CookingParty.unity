@@ -2689,7 +2689,7 @@ Prefab:
       propertyPath: m_Text
       value: 'Created for the
 
-        <color=#006c4c>Ludum Dare #33</color>'
+        <color=#006c4c>Ludum Dare #33</color>.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}

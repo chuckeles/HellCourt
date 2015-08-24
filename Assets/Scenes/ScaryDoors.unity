@@ -5353,7 +5353,7 @@ Prefab:
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
       value: In case you don't know yet, use <color=#009c4c>Escape</color> for menu
-        and <color=#009c4c>Tab</color> for highscores
+        and <color=#009c4c>Tab</color> for highscores.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}

@@ -3314,7 +3314,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_Text
-      value: Use jump when near a door to enter.
+      value: Press <color=#009c4c>S</color> or <color=#009c4c>Down</color> to enter
+        a door.
       objectReference: {fileID: 0}
     - target: {fileID: 11452640, guid: 04c4e01955ebea245bc09c4aef83bae3, type: 2}
       propertyPath: m_FontData.m_RichText
