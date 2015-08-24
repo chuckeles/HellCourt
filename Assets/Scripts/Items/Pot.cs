@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 ///   Damages humans inside.
@@ -10,7 +11,12 @@ public class Pot : MonoBehaviour {
     _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
   }
 
-  public void Update() {
+  public void Start() {
+    // start hurting
+    StartCoroutine(Hurt());
+  }
+
+  public IEnumerator Hurt() {
     // get all humans
     var overlaps = Physics2D.OverlapAreaAll((Vector2) transform.position + DamageAreaMin,
                                             (Vector2) transform.position + DamageAreaMax,
@@ -22,9 +28,15 @@ public class Pot : MonoBehaviour {
       // if human
       if (sinner) {
         // apply pain
-        sinner.PhysicalPain += Time.deltaTime * _levelManager.PainMultiplier;
+        sinner.PhysicalPain += _levelManager.PainMultiplier;
       }
     }
+
+    // wait
+    yield return new WaitForSeconds(1);
+
+    // repeat
+    StartCoroutine(Hurt());
   }
 
   /// <summary>
