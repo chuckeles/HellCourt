@@ -40,9 +40,16 @@ public class Potion : MonoBehaviour {
     // parent
     ps.transform.parent = transform.parent;
 
+    // play sound
+    AudioUtil.PlayAtPositionWithPitch(transform.position, SplashSound);
+
     // destroy
     Destroy(gameObject);
   }
+  /// <summary>
+  /// The splash sound.
+  /// </summary>
+  public AudioClip SplashSound;
 
   /// <summary>
   ///   Max distance to heal.
