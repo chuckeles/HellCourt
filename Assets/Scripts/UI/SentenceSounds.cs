@@ -22,7 +22,10 @@ public class SentenceSounds : MonoBehaviour {
     sound.volume *= 0.4f;
 
     // wait
-    yield return new WaitForSeconds(Random.Range(sound.clip.length, sound.clip.length * 1.5f));
+    var wait = Random.Range(sound.clip.length, sound.clip.length * 1.5f);
+    if (Random.Range(0f, 10f) < 2f)
+      wait *= 1.5f;
+    yield return new WaitForSeconds(wait);
 
     // repeat
     StartCoroutine(Say());

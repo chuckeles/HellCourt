@@ -21,6 +21,10 @@ public class Analytics : MonoBehaviour {
   /// Send an event to mixpanel.
   /// </summary>
   public static void Send(string name, Dictionary<string, object> properties = null) {
+    // check token
+    if (string.IsNullOrEmpty(Mixpanel.Token))
+      return;
+
     // create properties
     if (properties == null)
       properties = new Dictionary<string, object>();
