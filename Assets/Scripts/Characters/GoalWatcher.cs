@@ -56,6 +56,9 @@ public class GoalWatcher : MonoBehaviour {
         // display sign
         FindObjectOfType<DialogManager>()
           .SaySilent("Current goal updated...", transform.position + new Vector3(0, 32f), 3f);
+
+        // send event
+        Analytics.Send("HumanHealed");
       }
     }
 
@@ -81,6 +84,9 @@ public class GoalWatcher : MonoBehaviour {
         // display sign
         FindObjectOfType<DialogManager>()
           .SaySilent("Current goal updated...", transform.position + new Vector3(0, 32f), 3f);
+
+        // send event
+        Analytics.Send("InflictedCrazyPain");
       }
     }
 
