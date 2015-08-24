@@ -56,8 +56,10 @@ public class FillTable : MonoBehaviour {
       button.transition = Selectable.Transition.None;
       button.onClick.AddListener(() => manager.Load(name));
     }
-
-    // TODO: Change height to enable scrolling
+    
+    // set height
+    var rectTransform = GetComponent<RectTransform>();
+    rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, levels.Length * 50f);
   }
 
   /// <summary>

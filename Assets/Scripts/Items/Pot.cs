@@ -16,9 +16,13 @@ public class Pot : MonoBehaviour {
   /// </summary>
   public IEnumerator Hurt() {
     // get all humans
-    var overlaps = Physics2D.OverlapAreaAll((Vector2) transform.position + DamageAreaMin,
-                                            (Vector2) transform.position + DamageAreaMax,
-                                            HumanLayer);
+    var overlaps =
+      Physics2D.OverlapAreaAll(
+        (Vector2) transform.position +
+        new Vector2(DamageAreaMin.x * transform.localScale.x, DamageAreaMin.y * transform.localScale.y),
+        (Vector2) transform.position +
+        new Vector2(DamageAreaMax.x * transform.localScale.x, DamageAreaMax.y * transform.localScale.y),
+        HumanLayer);
 
     var playedSound = false;
     foreach (var overlap in overlaps) {
