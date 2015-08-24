@@ -18,7 +18,9 @@ public class LevelManager : MonoBehaviour {
     /// </summary>
     public enum GoalType {
 
-      ReturnHumans
+      Return,
+      InflictCrazyPain,
+      Heal
 
     }
 
@@ -31,8 +33,16 @@ public class LevelManager : MonoBehaviour {
         var text = "";
 
         switch (Type) {
-          case GoalType.ReturnHumans:
+          case GoalType.Return:
             text = string.Format("Return {0} {1}", Number, Number > 1 ? "humans" : "human");
+            break;
+
+          case GoalType.InflictCrazyPain:
+            text = string.Format("Inflict crazy or bigger pain to {0} {1}", Number, Number > 1 ? "humans" : "human");
+            break;
+
+          case GoalType.Heal:
+            text = string.Format("Heal {0} {1} from huge or bigger pain", Number, Number > 1 ? "humans" : "human");
             break;
         }
 
