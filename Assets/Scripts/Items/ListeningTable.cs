@@ -116,14 +116,7 @@ public class ListeningTable : MonoBehaviour {
       yield return new WaitForSeconds(3.2f);
 
       // check number of sins
-      if (sin + 1 < sinner.Sins.Count) {
-        // more sins
-        StartCoroutine(And(sin));
-      }
-      else {
-        // finish
-        StartCoroutine(GainControl());
-      }
+      StartCoroutine(sin + 1 < sinner.Sins.Count ? And(sin) : GainControl());
     }
   }
 

@@ -5,7 +5,7 @@
 /// </summary>
 public class Potion : MonoBehaviour {
 
-  public void OnTriggerEnter2D(Collider2D collision) {
+  public void OnTriggerEnter2D() {
     // find closest human
     var humans = GameObject.FindGameObjectsWithTag("Human");
     GameObject closestHuman = null;

@@ -22,12 +22,12 @@ public class SayRandomThings : MonoBehaviour {
   /// </summary>
   private IEnumerator Say() {
     // get pending pain
-    var pendingMental = _sinner.MentalPain - LastMental;
-    var pendingPhysical = _sinner.PhysicalPain - LastPhysical;
+    var pendingMental = _sinner.MentalPain - _lastMental;
+    var pendingPhysical = _sinner.PhysicalPain - _lastPhysical;
 
     // reset
-    LastMental = _sinner.MentalPain;
-    LastPhysical = _sinner.PhysicalPain;
+    _lastMental = _sinner.MentalPain;
+    _lastPhysical = _sinner.PhysicalPain;
 
     // wait
     yield return new WaitForSeconds(Random.Range(MinWait, MaxWait));
@@ -142,7 +142,7 @@ public class SayRandomThings : MonoBehaviour {
   /// </summary>
   private Sinner _sinner;
 
-  private float LastMental;
-  private float LastPhysical;
+  private float _lastMental;
+  private float _lastPhysical;
 
 }

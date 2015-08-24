@@ -47,7 +47,7 @@ public class DialogManager : MonoBehaviour {
     }
 
     // add to the list
-    SayInfos.Add(new SayInfo {
+    _sayInfos.Add(new SayInfo {
       Object = saidSentence,
       Timer = time
     });
@@ -55,43 +55,39 @@ public class DialogManager : MonoBehaviour {
     return saidSentence;
   }
 
-  public GameObject SayPitch(string sentence, Vector2 position, float pitch, float time = 2f, GameObject target = null) {
+  public void SayPitch(string sentence, Vector2 position, float pitch, float time = 2f, GameObject target = null) {
     // say
     var say = Say(sentence, position, time, target);
 
     // set pitch
     say.GetComponent<SentenceSounds>().Pitch = pitch;
-
-    return say;
   }
 
-  public GameObject SaySilent(string sentence, Vector2 position, float time = 2f, GameObject target = null) {
+  public void SaySilent(string sentence, Vector2 position, float time = 2f, GameObject target = null) {
     // say
     var say = Say(sentence, position, time, target);
 
     // mute
     say.GetComponent<SentenceSounds>().enabled = false;
-
-    return say;
   }
 
   public void Update() {
     // update infos
-    for (var i = 0; i < SayInfos.Count;) {
+    for (var i = 0; i < _sayInfos.Count;) {
       // get info
-      var info = SayInfos[i];
+      var info = _sayInfos[i];
 
       // update timer
       info.Timer -= Time.deltaTime;
 
       // auto-destruct
       if (info.Timer < 0) {
-        Destroy(SayInfos[i].Object);
-        SayInfos.RemoveAt(i);
+        Destroy(_sayInfos[i].Object);
+        _sayInfos.RemoveAt(i);
       }
       else {
         // update
-        SayInfos[i] = info;
+        _sayInfos[i] = info;
         ++i;
       }
     }
@@ -105,6 +101,6 @@ public class DialogManager : MonoBehaviour {
   /// <summary>
   ///   All things said.
   /// </summary>
-  private readonly List<SayInfo> SayInfos = new List<SayInfo>();
+  private readonly List<SayInfo> _sayInfos = new List<SayInfo>();
 
 }
