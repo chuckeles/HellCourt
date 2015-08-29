@@ -22,7 +22,7 @@ public class FallDamage : MonoBehaviour {
     // calculate pain
     var pain = collision.relativeVelocity.magnitude;
     pain -= 200f;
-    pain /= 50f;
+    pain /= 150f;
     pain = Mathf.Clamp(pain, 0, float.MaxValue);
 
     // apply pain

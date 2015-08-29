@@ -99,6 +99,10 @@ public class Statue : MonoBehaviour {
     if (_active)
       return;
 
+    // check goal
+    if (_levelManager.Goals.Count <= 0 || _levelManager.Goals[0].Type != LevelManager.Goal.GoalType.Return)
+      return;
+
     // check distance
     if ((_devil.transform.position - transform.position).magnitude < TriggerDistance) {
       // activate
